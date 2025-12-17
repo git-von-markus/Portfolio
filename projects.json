@@ -1,0 +1,58 @@
+[
+  {
+    "title": "3D Produktdemo",
+    "subtitle": "Blender Export als GLB",
+    "date": "2025",
+    "tags": ["3D", "Blender", "Web"],
+    "description": "Interaktives 3D Modell im Browser. Export: glTF/GLB, optimiert für Web.",
+    "media": {
+      "type": "model",
+      "src": "assets/models/demo.glb",
+      "poster": "assets/images/demo_poster.jpg"
+    },
+    "links": [
+      { "label": "Download Case Study PDF", "href": "assets/files/case-study.pdf" }
+    ]
+  },
+  {
+    "title": "Projektvideo",
+    "subtitle": "MP4 Einbettung",
+    "date": "2024",
+    "tags": ["Video"],
+    "description": "Lokales Video direkt auf der Seite.",
+    "media": {
+      "type": "video",
+      "src": "assets/videos/demo.mp4"
+    },
+    "links": [
+      { "label": "Download Build", "href": "assets/files/build.zip" }
+    ]
+  },
+  {
+    "title": "YouTube Teaser",
+    "subtitle": "Embed",
+    "date": "2024",
+    "tags": ["YouTube", "Showcase"],
+    "description": "YouTube Einbettung mit datenschutzfreundlicher Domain.",
+    "media": {
+      "type": "youtube",
+      "youtubeId": "dQw4w9WgXcQ"
+    },
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/" }
+    ]
+  },
+  {
+    "title": "Bildergalerie Projekt",
+    "subtitle": "Ein Bild als Cover",
+    "date": "2023",
+    "tags": ["UI", "Design"],
+    "description": "Schnelles Preview über ein Coverbild. Mehr kannst du später als Galerie erweitern.",
+    "media": {
+      "type": "image",
+      "src": "assets/images/cover.jpg",
+      "alt": "Projekt Cover"
+    },
+    "links": []
+  }
+]

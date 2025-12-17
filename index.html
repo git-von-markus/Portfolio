@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js"></script>
+
+  <!-- 3D: model-viewer (Web Component) -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo"></div>
+      <div>
+        <div class="name">Dein Name</div>
+        <div class="tagline">Projekte, Prototypen, Experimente</div>
+      </div>
+    </div>
+
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Projekte suchen…" />
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Portfolio</h1>
+      <p>Hier zeige ich, was ich gebaut habe. Schnell, sauber, nachvollziehbar.</p>
+      <div class="chips" id="tagChips"></div>
+    </section>
+
+    <section class="grid" id="projectGrid" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Dein Name</span>
+    <span class="dot">•</span>
+    <a href="mailto:you@example.com">you@example.com</a>
+  </footer>
+</body>
+</html>
