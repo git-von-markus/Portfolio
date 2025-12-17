@@ -1,58 +1,85 @@
-[
-  {
-    "title": "3D Produktdemo",
-    "subtitle": "Blender Export als GLB",
-    "date": "2025",
-    "tags": ["3D", "Blender", "Web"],
-    "description": "Interaktives 3D Modell im Browser. Export: glTF/GLB, optimiert für Web.",
-    "media": {
-      "type": "model",
-      "src": "assets/models/demo.glb",
-      "poster": "assets/images/demo_poster.jpg"
+{
+  "categories": [
+    {
+      "id": "video",
+      "title": "Videoproduktion",
+      "subtitle": "Schnitt, Motion, Doku, Teaser",
+      "items": [
+        {
+          "title": "Teaser Beispiel",
+          "meta": "2025 · YouTube",
+          "tags": ["Edit", "Teaser"],
+          "description": "Beispiel Eintrag. Ersetzen durch dein echtes Projekt.",
+          "media": { "type": "youtube", "youtubeId": "dQw4w9WgXcQ" },
+          "links": [{ "label": "Link", "href": "https://example.com" }]
+        }
+      ]
     },
-    "links": [
-      { "label": "Download Case Study PDF", "href": "assets/files/case-study.pdf" }
-    ]
-  },
-  {
-    "title": "Projektvideo",
-    "subtitle": "MP4 Einbettung",
-    "date": "2024",
-    "tags": ["Video"],
-    "description": "Lokales Video direkt auf der Seite.",
-    "media": {
-      "type": "video",
-      "src": "assets/videos/demo.mp4"
+    {
+      "id": "game",
+      "title": "Game Development",
+      "subtitle": "Prototypen, Mechanics, Tools",
+      "items": []
     },
-    "links": [
-      { "label": "Download Build", "href": "assets/files/build.zip" }
-    ]
-  },
-  {
-    "title": "YouTube Teaser",
-    "subtitle": "Embed",
-    "date": "2024",
-    "tags": ["YouTube", "Showcase"],
-    "description": "YouTube Einbettung mit datenschutzfreundlicher Domain.",
-    "media": {
-      "type": "youtube",
-      "youtubeId": "dQw4w9WgXcQ"
+    {
+      "id": "photo",
+      "title": "Fotografie",
+      "subtitle": "Serien, Auswahl, Prints",
+      "items": [
+        {
+          "title": "Foto Beispiel",
+          "meta": "2024 · Auswahl",
+          "tags": ["Portrait", "Light"],
+          "description": "Beispiel Eintrag. Ersetzen durch dein echtes Projekt.",
+          "media": { "type": "image", "src": "assets/images/cover.jpg", "alt": "Cover" },
+          "links": [{ "label": "Download (optional)", "href": "assets/files/sample.pdf" }]
+        }
+      ]
     },
-    "links": [
-      { "label": "GitHub", "href": "https://github.com/" }
-    ]
-  },
-  {
-    "title": "Bildergalerie Projekt",
-    "subtitle": "Ein Bild als Cover",
-    "date": "2023",
-    "tags": ["UI", "Design"],
-    "description": "Schnelles Preview über ein Coverbild. Mehr kannst du später als Galerie erweitern.",
-    "media": {
-      "type": "image",
-      "src": "assets/images/cover.jpg",
-      "alt": "Projekt Cover"
+    {
+      "id": "modeling",
+      "title": "Modellierung",
+      "subtitle": "Blender, GLB, Shading",
+      "items": [
+        {
+          "title": "3D Beispiel",
+          "meta": "2025 · Blender GLB",
+          "tags": ["3D", "GLB"],
+          "description": "Beispiel Eintrag. Lege eine echte .glb Datei unter assets/models/ ab und setze src korrekt.",
+          "media": { "type": "model", "src": "assets/models/demo.glb", "poster": "assets/images/demo_poster.jpg" },
+          "links": [{ "label": "Download GLB", "href": "assets/models/demo.glb" }]
+        }
+      ]
     },
-    "links": []
-  }
-]
+    {
+      "id": "software",
+      "title": "Software Development",
+      "subtitle": "Apps, Prototypen, Tools",
+      "items": [
+        {
+          "title": "Mercury Messenger",
+          "meta": "2025 · JavaFX",
+          "tags": ["Java", "JavaFX", "Client/Server"],
+          "description": "Client GUI, Server Kommunikation, Packaging via jpackage. Beispieltext, bitte konkretisieren.",
+          "media": { "type": "image", "src": "assets/images/mercury.jpg", "alt": "Mercury Screenshot" },
+          "links": [{ "label": "GitHub", "href": "https://github.com/" }]
+        }
+      ]
+    },
+    {
+      "id": "audio",
+      "title": "Audioproduktion",
+      "subtitle": "Sounddesign, Mix, Podcast",
+      "items": [
+        {
+          "title": "Podcast Beispiel",
+          "meta": "2025 · Audio",
+          "tags": ["Mix", "Voice"],
+          "description": "Beispiel Eintrag. Wenn du Audio direkt einbetten willst, sag Bescheid, dann ergänze ich Audio Player Support.",
+          "media": { "type": "image", "src": "assets/images/audio.jpg", "alt": "Audio Cover" },
+          "links": [{ "label": "Download", "href": "assets/files/sample.mp3" }]
+        }
+      ]
+    }
+  ]
+}

@@ -76,21 +76,15 @@ a:hover{ text-decoration: underline; }
   cursor: pointer;
   user-select: none;
 }
-.chip.active{
-  color: var(--text);
-  border-color: rgba(82,140,255,0.55);
-  background: rgba(82,140,255,0.12);
+.chip:hover{
+  background: rgba(255,255,255,0.10);
+  text-decoration: none;
 }
 
-.grid{
-  margin-top: 18px;
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 14px;
-}
+/* Sections + Carousel */
+.sections{ margin-top: 18px; display: flex; flex-direction: column; gap: 18px; }
 
-.card{
-  grid-column: span 12;
+.sectionCard{
   border: 1px solid var(--line);
   background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.04));
   border-radius: var(--r);
@@ -98,11 +92,63 @@ a:hover{ text-decoration: underline; }
   box-shadow: var(--shadow);
 }
 
-@media (min-width: 820px){
-  .card{ grid-column: span 6; }
+.sectionHead{
+  padding: 14px 14px 10px;
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
 }
-@media (min-width: 1040px){
-  .card{ grid-column: span 4; }
+
+.sectionTitle{ margin:0; font-weight: 800; font-size: 18px; }
+.sectionSub{ margin-top: 6px; color: var(--muted); font-size: 13px; }
+
+.carouselControls{ display:flex; gap: 10px; }
+.iconBtn{
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.iconBtn:hover{ background: rgba(255,255,255,0.10); }
+
+.carousel{
+  border-top: 1px solid var(--line);
+  padding: 12px;
+  overflow: hidden;
+}
+
+.track{
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+.track::-webkit-scrollbar{ height: 10px; }
+.track::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.12); border-radius: 999px; }
+
+.slide{
+  flex: 0 0 auto;
+  width: min(520px, 92vw);
+}
+
+@media (min-width: 820px){
+  .slide{ width: 520px; }
+}
+
+/* Project card (reused) */
+.card{
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.04));
+  border-radius: var(--r);
+  overflow: hidden;
 }
 
 .cardHeader{
@@ -142,9 +188,7 @@ a:hover{ text-decoration: underline; }
   border:0;
 }
 
-.cardBody{
-  padding: 12px 14px 14px;
-}
+.cardBody{ padding: 12px 14px 14px; }
 .desc{
   margin: 0 0 12px;
   color: var(--muted);
