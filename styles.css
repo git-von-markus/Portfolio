@@ -17,6 +17,7 @@ body{
   color: var(--text);
   background: var(--bg);
   position: relative;
+  padding-top: 72px; /* Höhe der Topbar */
 }
 
 /* Fixed background layer: nie abgeschnitten, unabhängig von Content-Höhe */
@@ -40,7 +41,7 @@ a:hover{ text-decoration: underline; }
 .wrap{ max-width: 1115px; margin: 0 auto; padding: 28px 18px 48px; }
 
 .topbar{
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
   display:flex;
