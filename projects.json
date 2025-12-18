@@ -128,7 +128,7 @@
           "description": "Test für lokales MP4 Video.",
           "media": {
             "type": "video",
-            "src": "assets/videos/demo.mp4"
+            "src": "assets/videos/Werbung_IvoPetkov.mp4"
           },
           "links": []
         }
