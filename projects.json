@@ -166,13 +166,13 @@
         },
         {
           "title": "Mercury Messenger",
-          "meta": "2025 · App · Studium",
+          "meta": "2024/2025 · App · Studium",
           "tags": ["Software"],
-          "description": "Test für Screenshot als Bild.",
+          "description": "...",
           "media": {
             "type": "image",
-            "src": "assets/images/software.jpg",
-            "alt": "Software Screenshot"
+            "src": "assets/images/ScreenshotMercuryMessenger.jpg",
+            "alt": "Mercury Messenger"
           },
           "links": []
         },
@@ -228,17 +228,6 @@
             "youtubeId": "8OP7Hw8utLc"
           },
           "links": []
-        },
-        {
-          "title": "YouTube Demo",
-          "meta": "2024 · YouTube · Privat",
-          "tags": ["Video", "Embed"],
-          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
-          "media": {
-            "type": "youtube",
-            "youtubeId": "8xN4XLNo8kU"
-          },
-          "links": []
         }
       ]
     },
@@ -263,7 +252,7 @@
         {
           "title": "Kalender PWA",
           "meta": "2025 · Webseite · Studium · Programmierung",
-          "tags": ["Webdesign", "Studium"],
+          "tags": ["Webdesign", "Programmierung", "Studium"],
           "description": "...",
           "media": {
             "type": "image",
@@ -273,13 +262,13 @@
           "links": []
         },
         {
-          "title": "Webseitenentwurf Natur findet Stadt",
-          "meta": "2024 · Webseite · Studium",
-          "tags": ["Webdesign", "Studium"],
+          "title": "DishDash",
+          "meta": "2024 · Webseite · Studium · Programmierung",
+          "tags": ["Webdesign", "Programmierung", "Studium"],
           "description": "...",
           "media": {
             "type": "image",
-            "src": "assets/images/WebsiteNaturfindetStadt.jpg",
+            "src": "assets/images/ScreenshotDishDash.jpg",
             "alt": "KalenderPWA"
           },
           "links": []
@@ -293,6 +282,18 @@
             "type": "image",
             "src": "assets/images/WebsiteNaturfindetStadt.jpg",
             "alt": "KalenderPWA"
+          },
+          "links": []
+        },
+        {
+          "title": "Dartzähler",
+          "meta": "2022 · Webseite · Schule",
+          "tags": ["Webdesign", "Programmierung", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/ScreenshotDart.jpg",
+            "alt": "DartZähler"
           },
           "links": []
         }
