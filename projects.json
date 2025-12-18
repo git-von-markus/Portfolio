@@ -67,7 +67,7 @@
           "media": {
             "type": "model",
             "src": "assets/models/Kegelbahn.glb",
-            "poster": "assets/images/model_poster.jpg"
+            "poster": "assets/images/ScreenshotKegelbahn.jpg"
           },
           "links": []
         }
