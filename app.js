@@ -298,19 +298,68 @@ function renderMedia(m){
   }
 
   if(m.type === "imageGrid"){
-    const grid = document.createElement("div");
-    grid.className = "imageGrid";
-    (m.images ?? []).slice(0, 9).forEach(src => {
-      const cell = document.createElement("div");
-      cell.className = "imageGridItem";
+  const grid = document.createElement("div");
+  grid.className = "imageGrid";
+
+  const preview = document.createElement("div");
+  preview.className = "imageGridPreview";
+  const previewImg = document.createElement("img");
+  previewImg.alt = "";
+  preview.appendChild(previewImg);
+  grid.appendChild(preview);
+
+  const imgs = Array.isArray(m.images) ? m.images.slice(0, 9) : [];
+
+  let hoverTimer = null;
+  const HOVER_DELAY = 120; // ms
+
+  function openPreview(src){
+    if(!src) return;
+    previewImg.src = src;
+    preview.classList.add("open");
+    grid.classList.add("previewing");
+  }
+
+  function closePreview(){
+    clearTimeout(hoverTimer);
+    preview.classList.remove("open");
+    grid.classList.remove("previewing");
+    previewImg.src = "";
+  }
+
+  for(let i = 0; i < 9; i++){
+    const cell = document.createElement("div");
+    cell.className = "imageGridItem";
+
+    const src = imgs[i];
+    if(src){
       const img = document.createElement("img");
       img.src = src;
       img.loading = "lazy";
+      img.alt = "";
       cell.appendChild(img);
-      grid.appendChild(cell);
-    });
-    return grid;
+
+      cell.addEventListener("mouseenter", () => {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(() => openPreview(src), HOVER_DELAY);
+      });
+
+      cell.addEventListener("mouseleave", () => {
+        clearTimeout(hoverTimer);
+      });
+    } else {
+      cell.classList.add("empty");
+    }
+
+    grid.appendChild(cell);
   }
+
+  grid.addEventListener("mouseleave", closePreview);
+
+  return grid;
+}
+
+
 
   return el;
 }
