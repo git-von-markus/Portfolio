@@ -62,7 +62,7 @@
       "items": [
         {
           "title": "3D Modell Demo",
-          "meta": "2025 · Blender",
+          "meta": "2025 · Blender · Studium",
           "tags": ["3D", "GLB"],
           "description": "Test für interaktives GLB Modell.",
           "media": {
@@ -74,7 +74,7 @@
         },
         {
           "title": "3D Modell Demo",
-          "meta": "2025 · Blender",
+          "meta": "2025 · Blender · Studium",
           "tags": ["3D", "GLB"],
           "description": "Test für interaktives GLB Modell.",
           "media": {
@@ -86,8 +86,8 @@
         },
         {
           "title": "3D Modell Demo",
-          "meta": "2025 · Blender",
-          "tags": ["3D", "GLB"],
+          "meta": "2025 · Blender · Studium",
+          "tags": ["3D", "Image"],
           "description": "Test für interaktives GLB Modell.",
           "media": {
             "type": "model",
@@ -117,7 +117,7 @@
           "links": []
         },
         {
-          "title": "Software Screenshot",
+          "title": "Mercury Messenger",
           "meta": "2025 · App · Studium",
           "tags": ["Software"],
           "description": "Test für Screenshot als Bild.",
@@ -182,13 +182,13 @@
           "links": []
         },
         {
-          "title": "Lokales Video",
-          "meta": "2025 · MP4",
+          "title": "UFO Animation",
+          "meta": "2025 · MP4 · Studium · Animation",
           "tags": ["Video", "Local"],
           "description": "Test für lokales MP4 Video.",
           "media": {
             "type": "video",
-            "src": "assets/videos/Werbung_IvoPetkov.mp4"
+            "src": "assets/videos/UFO.mp4"
           },
           "links": []
         }
