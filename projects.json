@@ -18,6 +18,17 @@
           "links": []
         },
         {
+          "title": "UFO Animation",
+          "meta": "2025 · MP4 · Studium · Animation",
+          "tags": ["3D", "Video", "Animation"],
+          "description": "...",
+          "media": {
+            "type": "video",
+            "src": "assets/videos/UFO.mp4"
+          },
+          "links": []
+        },
+        {
           "title": "Galaxy Trucker",
           "meta": "2025 · MMI · Studium · Programmierung",
           "tags": ["Programmierung", "Game"],
@@ -35,7 +46,7 @@
     {
       "id": "photo",
       "title": "Fotografie",
-      "subtitle": "Einzelbilder und Serien",
+      "subtitle": "...",
       "items": [
         {
           "title": "Werbefoto Handball",
@@ -53,7 +64,7 @@
           "title": "Sammlung Urbane Natur",
           "meta": "2024/2025 · Serie · Privat · Bildkomosition",
           "tags": ["Foto", "Gallerie"],
-          "description": "Test für 3×3 Bild-Grid mit Hover und Lightbox.",
+          "description": "...",
           "media": {
             "type": "imageGrid",
             "images": [
@@ -71,10 +82,10 @@
           "links": []
         },
         {
-          "title": "Werbefoto Handball",
+          "title": "Beleg Digitale Bildbearbeitung",
           "meta": "2023/2024 · Foto · Studium · Bildbearbeitung",
-          "tags": ["Foto", "Studium"],
-          "description": "Test für einzelnes Bild.",
+          "tags": ["Foto"],
+          "description": "...",
           "media": {
             "type": "image",
             "src": "assets/images/City_in_a_Bubble.jpg",
@@ -88,12 +99,24 @@
     {
       "id": "game",
       "title": "Game Development",
-      "subtitle": "Soll trotzdem sichtbar sein",
+      "subtitle": "...",
       "items": [
+        {
+          "title": "Hand vs Hardware",
+          "meta": "2024/2025 · MMI · Studium · Programmierung",
+          "tags": ["Programmierung", "Game"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/HandvsHardware.jpg",
+            "alt": "HandvsHardware"
+          },
+          "links": []
+        },
         {
           "title": "Connect4 | Konsole",
           "meta": "2023/2024 · Konsole · Studium · Programmierung",
-          "tags": ["Programmierung", "Studium"],
+          "tags": ["Programmierung", "Game"],
           "description": "...",
           "media": {
             "type": "image",
@@ -105,7 +128,7 @@
         {
           "title": "Connect4 | App",
           "meta": "2024 · App · Studium · Programmierung",
-          "tags": ["Programmierung", "Studium"],
+          "tags": ["Programmierung", "Game"],
           "description": "...",
           "media": {
             "type": "image",
@@ -120,13 +143,13 @@
     {
       "id": "modeling",
       "title": "Modellierung & Animation",
-      "subtitle": "Blender GLB",
+      "subtitle": "...",
       "items": [
         {
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
-          "tags": ["3D", "GLB", "Stud"],
-          "description": "Test für interaktives GLB Modell.",
+          "tags": ["3D", "GLB"],
+          "description": "...",
           "media": {
             "type": "model",
             "src": "assets/models/SchwertSchild.glb",
@@ -138,7 +161,7 @@
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
           "tags": ["3D", "GLB"],
-          "description": "Test für interaktives GLB Modell.",
+          "description": "...",
           "media": {
             "type": "model",
             "src": "assets/models/Kegelbahn.glb",
@@ -150,10 +173,10 @@
           "title": "UFO Animation",
           "meta": "2025 · MP4 · Studium · Animation",
           "tags": ["3D", "Video", "Animation"],
-          "description": "Test für lokales MP4 Video.",
+          "description": "...",
           "media": {
             "type": "video",
-            "src": "assets/videos/UFO.mp4"
+            "src": "assets/videos/BallwithTail.mp4"
           },
           "links": []
         },
@@ -161,7 +184,7 @@
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
           "tags": ["3D", "GLB"],
-          "description": "Test für interaktives GLB Modell.",
+          "description": "...",
           "media": {
             "type": "image",
             "src": "assets/images/ScreenshotSchuessel.jpg",
@@ -175,7 +198,7 @@
     {
       "id": "software",
       "title": "Software Development",
-      "subtitle": "Screenshots, Downloads",
+      "subtitle": "...",
       "items": [
         {
           "title": "Mercury Messenger",
@@ -207,13 +230,13 @@
     {
       "id": "video",
       "title": "Videoproduktion",
-      "subtitle": "YouTube, lokale Videos",
+      "subtitle": "...",
       "items": [
         {
           "title": "YouTube Demo",
           "meta": "2024 · YouTube · Privat",
           "tags": ["Video"],
-          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "description": "...",
           "media": {
             "type": "youtube",
             "youtubeId": "8xN4XLNo8kU"
@@ -224,7 +247,7 @@
           "title": "YouTube Demo",
           "meta": "2021 · YouTube · Ehrenamt",
           "tags": ["Video"],
-          "description": "Test für YouTube Einbettung. ",
+          "description": "...",
           "media": {
             "type": "youtubePlaylist",
             "playlistId": "PLGiXlQ_q2V4IB2NITkeGA9XMK0Wm3Pw0Z"
@@ -235,7 +258,7 @@
           "title": "YouTube Demo",
           "meta": "2025 · YouTube · Studium",
           "tags": ["Video"],
-          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "description": "...",
           "media": {
             "type": "youtube",
             "youtubeId": "8OP7Hw8utLc"
@@ -248,7 +271,7 @@
     {
       "id": "web",
       "title": "Webdesign",
-      "subtitle": "Soll trotzdem sichtbar sein",
+      "subtitle": "...",
       "items": [
         {
           "title": "Webseitenentwurf Günter Schulte",
