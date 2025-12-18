@@ -357,37 +357,45 @@ function setupProjectModal(){
   let index = 0;
 
   function render(){
-    const cat = data.categories.find(c => c.id === catId);
-    if(!cat) return;
-    const p = cat.items[index];
+  const cat = data.categories.find(c => c.id === catId);
+  if(!cat) return;
 
-    titleEl.textContent = p.title ?? "";
-    metaEl.textContent = [cat.title, p.meta].filter(Boolean).join(" · ");
+  const items = cat.items ?? [];
+  if(items.length === 0) return;
 
-    badgesEl.innerHTML = "";
-    (p.tags ?? []).forEach(t => {
-      const b = document.createElement("span");
-      b.className = "badge";
-      b.textContent = t;
-      badgesEl.appendChild(b);
-    });
+  // zyklisch: -1 -> letztes, letztes+1 -> erstes
+  index = ((index % items.length) + items.length) % items.length;
 
-    descEl.textContent = p.description ?? "";
+  const p = items[index];
 
-    actionsEl.innerHTML = "";
-    (p.links ?? []).forEach(l => {
-      const a = document.createElement("a");
-      a.className = "btn";
-      a.href = l.href;
-      a.target = l.href.startsWith("http") ? "_blank" : "_self";
-      a.rel = "noopener";
-      a.textContent = l.label;
-      actionsEl.appendChild(a);
-    });
+  titleEl.textContent = p.title ?? "";
+  metaEl.textContent = [cat.title, p.meta].filter(Boolean).join(" · ");
 
-    mediaEl.innerHTML = "";
-    mediaEl.appendChild(renderMedia(p.media));
-  }
+  badgesEl.innerHTML = "";
+  (p.tags ?? []).forEach(t => {
+    const b = document.createElement("span");
+    b.className = "badge";
+    b.textContent = t;
+    badgesEl.appendChild(b);
+  });
+
+  descEl.textContent = p.description ?? "";
+
+  actionsEl.innerHTML = "";
+  (p.links ?? []).forEach(l => {
+    const a = document.createElement("a");
+    a.className = "btn";
+    a.href = l.href;
+    a.target = l.href.startsWith("http") ? "_blank" : "_self";
+    a.rel = "noopener";
+    a.textContent = l.label;
+    actionsEl.appendChild(a);
+  });
+
+  mediaEl.innerHTML = "";
+  mediaEl.appendChild(renderMedia(p.media));
+}
+
 
   function open(c, i){
     catId = c;
