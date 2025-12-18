@@ -101,7 +101,7 @@
       "items": [
         {
           "title": "YouTube Demo",
-          "meta": "2025 · YouTube",
+          "meta": "2024 · YouTube · Privat",
           "tags": ["Video", "Embed"],
           "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
           "media": {
@@ -112,12 +112,23 @@
         },
         {
           "title": "YouTube Demo",
-          "meta": "2025 · YouTube",
+          "meta": "2021 · YouTube · Ehrenamt",
           "tags": ["Video", "Embed"],
           "description": "Test für YouTube Einbettung. ",
           "media": {
             "type": "youtubePlaylist",
             "playlistId": "PLGiXlQ_q2V4IB2NITkeGA9XMK0Wm3Pw0Z"
+          },
+          "links": []
+        },
+        {
+          "title": "YouTube Demo",
+          "meta": "2025 · YouTube · Studium",
+          "tags": ["Video", "Embed"],
+          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "media": {
+            "type": "youtube",
+            "youtubeId": "8OP7Hw8utLc"
           },
           "links": []
         },
