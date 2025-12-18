@@ -7,7 +7,6 @@ yearEl.textContent = String(new Date().getFullYear());
 
 let data = null;
 const modal = setupProjectModal();
-const legalModal = setupLegalModal();
 const gridLightbox = setupGridLightbox();
 
 
@@ -24,8 +23,6 @@ async function init() {
     const q = searchInput.value.trim().toLowerCase();
     renderSections(filterCategories(data.categories, q));
   });
-
-  setupLegalLinks();
 }
 
 async function loadData() {
@@ -481,72 +478,6 @@ function showFatal(err) {
       </div>
     </div>
   `;
-}
-
-
-function setupLegalModal() {
-  const overlay = document.createElement("div");
-  overlay.className = "projectModal legalModal";
-  overlay.innerHTML = `
-    <div class="projectModalInner" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
-      <div class="projectModalTopbar">
-        <div>
-          <h3 class="projectModalTitle" id="legalModalTitle"></h3>
-        </div>
-        <button class="projectModalClose" type="button" aria-label="Schließen">✕</button>
-      </div>
-
-      <div class="projectModalBody">
-        <div class="projectModalContent legalModalContent"></div>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(overlay);
-
-  const titleEl = overlay.querySelector(".projectModalTitle");
-  const contentEl = overlay.querySelector(".legalModalContent");
-  const closeBtn = overlay.querySelector(".projectModalClose");
-
-  function open(key, title) {
-    const tpl = document.getElementById(`legal-${key}`);
-    titleEl.textContent = title;
-
-    contentEl.innerHTML = "";
-    if (tpl && "content" in tpl) {
-      contentEl.appendChild(tpl.content.cloneNode(true));
-    } else {
-      contentEl.innerHTML = `<p>Inhalt nicht gefunden: ${key}</p>`;
-    }
-
-    overlay.classList.add("open");
-  }
-
-  function close() {
-    overlay.classList.remove("open");
-  }
-
-  closeBtn.addEventListener("click", close);
-
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) close();
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay.classList.contains("open")) close();
-  });
-
-  return { open, close, el: overlay };
-}
-
-function setupLegalLinks() {
-  document.querySelectorAll("[data-legal]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const key = btn.getAttribute("data-legal");
-      const title = key === "impressum" ? "Impressum" : "Datenschutz";
-      legalModal.open(key, title);
-    });
-  });
 }
 
 function setupGridLightbox() {
