@@ -37,7 +37,7 @@ body::before{
 a{ color: var(--text); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
-.wrap{ max-width: 1500px; margin: 0 auto; padding: 28px 18px 48px; }
+.wrap{ max-width: 1125px; margin: 0 auto; padding: 28px 18px 48px; }
 
 .topbar{
   position: sticky;
