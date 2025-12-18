@@ -34,12 +34,13 @@
             "images": [
               "assets/images/UrbaneNatur/UrbaneNatur_1.jpg",
               "assets/images/UrbaneNatur/UrbaneNatur_2.jpg",
-              "assets/images/grid3.jpg",
-              "assets/images/grid4.jpg",
-              "assets/images/grid5.jpg",
-              "assets/images/grid6.jpg",
-              "assets/images/grid7.jpg",
-              "assets/images/grid8.jpg"
+              "assets/images/UrbaneNatur/UrbaneNatur_3.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_4.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_5.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_6.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_7.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_8.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_9.jpg"
             ]
           },
           "links": []
@@ -90,8 +91,8 @@
           "description": "Test für interaktives GLB Modell.",
           "media": {
             "type": "model",
-            "src": "assets/models/Schuessel.glb",
-            "poster": "assets/images/ScreenshotSchuessel.jpg"
+            "src": "assets/models/SchwertSchild.glb",
+            "poster": "assets/images/ScreenshotSchwertSchild.jpg"
           },
           "links": []
         }
@@ -105,7 +106,31 @@
       "items": [
         {
           "title": "Software Screenshot",
-          "meta": "2025 · App",
+          "meta": "2024/2025 · Consolenprogramm · Studium",
+          "tags": ["Software"],
+          "description": "Test für Screenshot als Bild.",
+          "media": {
+            "type": "image",
+            "src": "assets/images/software.jpg",
+            "alt": "Software Screenshot"
+          },
+          "links": []
+        },
+        {
+          "title": "Software Screenshot",
+          "meta": "2025 · App · Studium",
+          "tags": ["Software"],
+          "description": "Test für Screenshot als Bild.",
+          "media": {
+            "type": "image",
+            "src": "assets/images/software.jpg",
+            "alt": "Software Screenshot"
+          },
+          "links": []
+        },
+        {
+          "title": "Software Screenshot",
+          "meta": "2025 · App · Studium",
           "tags": ["Software"],
           "description": "Test für Screenshot als Bild.",
           "media": {
@@ -171,8 +196,8 @@
     },
 
     {
-      "id": "empty",
-      "title": "Leeres Karussell",
+      "id": "web",
+      "title": "Webdesign",
       "subtitle": "Soll trotzdem sichtbar sein",
       "items": []
     }
