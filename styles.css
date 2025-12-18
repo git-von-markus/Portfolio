@@ -441,3 +441,103 @@ a:hover{ text-decoration: underline; }
   pointer-events: none;
 }
 
+
+/* ---- Grid Lightbox (für imageGrid) ---- */
+.gridLightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 12000; /* über projectModal */
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+}
+
+.gridLightbox.open{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gridLightboxInner{
+  width: min(1200px, 98vw);
+  max-height: 92vh;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(10, 14, 22, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.gridLightboxTopbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+}
+
+.gridLightboxTitle{
+  margin: 0;
+  font-weight: 800;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.gridLightboxClose{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.92);
+  cursor: pointer;
+}
+
+.gridLightboxMedia{
+  background: rgba(0,0,0,0.25);
+}
+
+.gridLightboxMedia img{
+  width: 100%;
+  height: min(78vh, 820px);
+  object-fit: contain;
+  display: block;
+}
+
+/* Pfeile: an der Box ausgerichtet (außen) */
+.gridLightboxNavBtn{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+  cursor: pointer;
+  z-index: 12001;
+}
+
+.gridLightboxNavBtn:hover{
+  background: rgba(255,255,255,0.16);
+}
+
+.gridLightbox.open .gridLightboxNavBtn{ display: block; }
+.gridLightbox .gridLightboxNavBtn{ display: none; }
+
+.gridLightboxNavBtn.prev{
+  left: calc(50% - min(1200px, 98vw) / 2 - 64px);
+}
+.gridLightboxNavBtn.next{
+  right: calc(50% - min(1200px, 98vw) / 2 - 64px);
+}
+
+@media (max-width: 700px){
+  .gridLightboxNavBtn.prev{ left: 10px; }
+  .gridLightboxNavBtn.next{ right: 10px; }
+}
+
