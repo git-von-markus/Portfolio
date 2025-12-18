@@ -233,6 +233,11 @@ a:hover{ text-decoration: underline; }
   object-fit: cover;
 }
 
+.projectModalMedia model-viewer{
+  aspect-ratio: 16 / 9;
+  min-height: 520px;
+}
+
 .media model-viewer{
   aspect-ratio: 16 / 9;
   min-height: 320px;

@@ -221,7 +221,10 @@ function projectCard(p, catId, index) {
 
   const media = document.createElement("div");
   media.className = "media";
-  media.appendChild(renderMedia(p.media, { catId, projectIndex: index, openProjectModalOnGridClick: true }));
+  media.appendChild(
+  renderMedia(p.media, { catId, projectIndex: index, openProjectModalOnGridClick: true, inModal: false })
+);
+
 
 
   const body = document.createElement("div");
@@ -310,15 +313,26 @@ function renderMedia(m, ctx) {
 }
 
   if (m.type === "model") {
-    const mv = document.createElement("model-viewer");
-    mv.setAttribute("src", m.src);
-    if (m.poster) mv.setAttribute("poster", m.poster);
-    mv.setAttribute("camera-controls", "");
-    mv.setAttribute("shadow-intensity", "0.8");
-    mv.setAttribute("loading", "lazy");
-    mv.style.background = "rgba(0,0,0,0.12)";
-    return mv;
+  // In der Kachel: nur Screenshot/Poster anzeigen
+  if (!ctx?.inModal) {
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.src = m.poster || "assets/images/model_poster.jpg"; // fallback, falls du willst
+    img.alt = "3D Modell Vorschau";
+    return img;
   }
+
+  // Im Modal: echtes interaktives Modell
+  const mv = document.createElement("model-viewer");
+  mv.setAttribute("src", m.src);
+  if (m.poster) mv.setAttribute("poster", m.poster);
+  mv.setAttribute("camera-controls", "");
+  mv.setAttribute("shadow-intensity", "0.8");
+  mv.setAttribute("loading", "lazy");
+  mv.style.background = "rgba(0,0,0,0.12)";
+  return mv;
+}
+
 
   if (m.type === "imageGrid") {
     const grid = document.createElement("div");
@@ -446,7 +460,10 @@ function setupProjectModal() {
     });
 
     mediaEl.innerHTML = "";
-    mediaEl.appendChild(renderMedia(p.media, { catId, projectIndex: index, openProjectModalOnGridClick: false }));
+    mediaEl.appendChild(
+  renderMedia(p.media, { catId, projectIndex: index, openProjectModalOnGridClick: false, inModal: true })
+);
+
   }
 
 
