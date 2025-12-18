@@ -127,6 +127,7 @@ a:hover{ text-decoration: underline; }
   justify-content: center;
   cursor: pointer;
 }
+.iconBtn:hover{ background: rgba(255,255,255,0.10); }
 
 .carousel{
   border-top: 1px solid var(--line);
@@ -217,6 +218,7 @@ a:hover{ text-decoration: underline; }
   color: var(--text);
   font-size: 13px;
 }
+.btn:hover{ background: rgba(255,255,255,0.10); text-decoration: none; }
 
 .footer{
   max-width: 1100px;
@@ -358,6 +360,9 @@ a:hover{ text-decoration: underline; }
   z-index: 10000;                  /* über dem Overlay */
 }
 
+.projectModalNavBtn:hover{
+  background: rgba(255,255,255,0.16);
+}
 
 /* Pfeile außerhalb, aber an der Modal-Box ausgerichtet */
 .projectModalNavBtn.prev{
@@ -490,8 +495,8 @@ a:hover{ text-decoration: underline; }
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  border: none;
-  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
   color: rgba(255,255,255,0.92);
   cursor: pointer;
   z-index: 12002;
@@ -500,13 +505,7 @@ a:hover{ text-decoration: underline; }
 
 .projectModalClose:hover,
 .gridLightboxClose:hover{
-  background: rgba(0,0,0,0.55);
-  transform: scale(1.05);
-}
-
-.projectModalClose:active,
-.gridLightboxClose:active{
-  transform: scale(0.96);
+  background: rgba(255,255,255,0.16);
 }
 
 
@@ -557,44 +556,3 @@ a:hover{ text-decoration: underline; }
   .gridLightboxNavBtn.next{ right: 10px; }
 }
 
-/* ===========================
-   Unified hover for ALL buttons
-   =========================== */
-
-:root{
-  --btnHoverBg: rgba(255,255,255,0.16);
-  --btnActiveScale: 0.96;
-  --btnHoverScale: 1.05;
-}
-
-/* Alle interaktiven Button-Typen */
-.btn,
-.iconBtn,
-.projectModalNavBtn,
-.gridLightboxNavBtn,
-.projectModalClose,
-.gridLightboxClose{
-  transition: background 160ms ease, transform 120ms ease, border-color 160ms ease;
-}
-
-/* Einheitlicher Hover */
-.btn:hover,
-.iconBtn:hover,
-.projectModalNavBtn:hover,
-.gridLightboxNavBtn:hover,
-.projectModalClose:hover,
-.gridLightboxClose:hover{
-  background: var(--btnHoverBg);
-  transform: scale(var(--btnHoverScale));
-  text-decoration: none; /* wichtig für <a class="btn"> */
-}
-
-/* Einheitlicher Active */
-.btn:active,
-.iconBtn:active,
-.projectModalNavBtn:active,
-.gridLightboxNavBtn:active,
-.projectModalClose:active,
-.gridLightboxClose:active{
-  transform: scale(var(--btnActiveScale));
-}
