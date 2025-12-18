@@ -242,12 +242,9 @@ a:hover{ text-decoration: underline; }
   transform: scale(1.05);
 }
 
+.media img,
 .projectModalMedia img{
-  cursor: pointer;
-}
-
-.media img{
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 
