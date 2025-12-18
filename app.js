@@ -292,6 +292,23 @@ function renderMedia(m, ctx) {
     return wrap;
   }
 
+  if (m.type === "youtubePlaylist") {
+  const wrap = document.createElement("div");
+  wrap.className = "ytWrap";
+
+  const iframe = document.createElement("iframe");
+  iframe.allow =
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+
+  iframe.src =
+    "https://www.youtube-nocookie.com/embed/videoseries?list=" +
+    encodeURIComponent(m.playlistId);
+
+  wrap.appendChild(iframe);
+  return wrap;
+}
+
   if (m.type === "model") {
     const mv = document.createElement("model-viewer");
     mv.setAttribute("src", m.src);

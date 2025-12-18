@@ -6,35 +6,6 @@
       "subtitle": "Aktuelle Projekte aus dem Studium, Arbeit, Ehrenamt und Privaten",
       "items": []
     },
-    {
-      "id": "video",
-      "title": "Videoproduktion",
-      "subtitle": "YouTube, lokale Videos",
-      "items": [
-        {
-          "title": "YouTube Demo",
-          "meta": "2025 · YouTube",
-          "tags": ["Video", "Embed"],
-          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
-          "media": {
-            "type": "youtube",
-            "youtubeId": "dQw4w9WgXcQ"
-          },
-          "links": []
-        },
-        {
-          "title": "Lokales Video",
-          "meta": "2025 · MP4",
-          "tags": ["Video", "Local"],
-          "description": "Test für lokales MP4 Video.",
-          "media": {
-            "type": "video",
-            "src": "assets/videos/demo.mp4"
-          },
-          "links": []
-        }
-      ]
-    },
 
     {
       "id": "photo",
@@ -77,8 +48,15 @@
     },
 
     {
+      "id": "game",
+      "title": "Game Development",
+      "subtitle": "Soll trotzdem sichtbar sein",
+      "items": []
+    },
+
+    {
       "id": "modeling",
-      "title": "3D Modellierung",
+      "title": "Modellierung & Animation",
       "subtitle": "Blender GLB",
       "items": [
         {
@@ -91,9 +69,7 @@
             "src": "assets/models/demo.glb",
             "poster": "assets/images/model_poster.jpg"
           },
-          "links": [
-            { "label": "Download GLB", "href": "assets/models/demo.glb" }
-          ]
+          "links": []
         }
       ]
     },
@@ -113,9 +89,48 @@
             "src": "assets/images/software.jpg",
             "alt": "Software Screenshot"
           },
-          "links": [
-            { "label": "GitHub", "href": "https://github.com" }
-          ]
+          "links": []
+        }
+      ]
+    },
+
+    {
+      "id": "video",
+      "title": "Videoproduktion",
+      "subtitle": "YouTube, lokale Videos",
+      "items": [
+        {
+          "title": "YouTube Demo",
+          "meta": "2025 · YouTube",
+          "tags": ["Video", "Embed"],
+          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "media": {
+            "type": "youtube",
+            "youtubeId": "dQw4w9WgXcQ"
+          },
+          "links": []
+        },
+        {
+          "title": "YouTube Demo",
+          "meta": "2025 · YouTube",
+          "tags": ["Video", "Embed"],
+          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "media": {
+            "type": "youtubePlaylist",
+            "playlistId": "PLGiXlQ_q2V4IB2NITkeGA9XMK0Wm3Pw0Z"
+          },
+          "links": []
+        },
+        {
+          "title": "Lokales Video",
+          "meta": "2025 · MP4",
+          "tags": ["Video", "Local"],
+          "description": "Test für lokales MP4 Video.",
+          "media": {
+            "type": "video",
+            "src": "assets/videos/demo.mp4"
+          },
+          "links": []
         }
       ]
     },
