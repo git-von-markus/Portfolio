@@ -1,6 +1,12 @@
 {
   "categories": [
     {
+      "id": "current",
+      "title": "Aktuelle Projekte",
+      "subtitle": "Aktuelle Projekte aus dem Studium, Arbeit, Ehrenamt und Privaten",
+      "items": []
+    },
+    {
       "id": "video",
       "title": "Videoproduktion",
       "subtitle": "YouTube, lokale Videos",
