@@ -246,7 +246,7 @@ a:hover{ text-decoration: underline; }
 }
 
 .projectModalInner{
-  width: min(1100px, 96vw);
+  width: min(1200px, 98vw);
   max-height: min(92vh, 920px);
   border-radius: 20px;
   overflow: hidden;
@@ -289,7 +289,7 @@ a:hover{ text-decoration: underline; }
 
 @media (min-width: 980px){
   .projectModalBody{
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1.7fr 1fr;
   }
 }
 
@@ -362,8 +362,13 @@ a:hover{ text-decoration: underline; }
   background: rgba(255,255,255,0.16);
 }
 
-.projectModalNavBtn.prev{ left: 18px; }
-.projectModalNavBtn.next{ right: 18px; }
+/* Pfeile außerhalb, aber an der Modal-Box ausgerichtet */
+.projectModalNavBtn.prev{
+  left: calc(50% - min(1200px, 98vw) / 2 - 64px);
+}
+.projectModalNavBtn.next{
+  right: calc(50% - min(1200px, 98vw) / 2 - 64px);
+}
 
 
 /* --- 3x3 Image Grid (media.type = imageGrid) --- */
