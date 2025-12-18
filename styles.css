@@ -37,10 +37,12 @@ body::before{
 a{ color: var(--text); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
-.wrap{ max-width: 1100px; margin: 0 auto; padding: 28px 18px 48px; }
+.wrap{ max-width: 1115px; margin: 0 auto; padding: 28px 18px 48px; }
 
 .topbar{
-  position: sticky;
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
   z-index: 10;
   display:flex;
@@ -135,15 +137,46 @@ a:hover{ text-decoration: underline; }
   overflow: hidden;
 }
 
+/* Scrollbar Grundlayout */
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+/* Track unsichtbar */
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* Scrollbar selbst */
+::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.18);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* Hover etwas stärker */
+::-webkit-scrollbar-thumb:hover{
+  background: rgba(255,255,255,0.28);
+}
+
+*{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.25) transparent;
+}
+
 .track{
   display: flex;
   gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 6px;
-  scrollbar-width: thin;
+  padding-bottom: 6px;          /* kann bleiben, damit sich die Höhe nicht ändert */
+  scrollbar-width: none;        /* Firefox: Scrollbar ausblenden */
+  -ms-overflow-style: none;     /* Legacy Edge/IE: Scrollbar ausblenden */
 }
-.track::-webkit-scrollbar{ height: 10px; }
+
+.track::-webkit-scrollbar{
+  display: none;                /* Chrome/Safari: Scrollbar ausblenden */
+}
 .track::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.12); border-radius: 999px; }
 
 .slide{
