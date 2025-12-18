@@ -37,7 +37,7 @@ body::before{
 a{ color: var(--text); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
-.wrap{ max-width: 1125px; margin: 0 auto; padding: 28px 18px 48px; }
+.wrap{ max-width: 1115px; margin: 0 auto; padding: 28px 18px 48px; }
 
 .topbar{
   position: sticky;
@@ -135,6 +135,33 @@ a:hover{ text-decoration: underline; }
   overflow: hidden;
 }
 
+/* Scrollbar Grundlayout */
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+/* Track unsichtbar */
+::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+/* Scrollbar selbst */
+::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.18);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* Hover etwas stärker */
+::-webkit-scrollbar-thumb:hover{
+  background: rgba(255,255,255,0.28);
+}
+
+*{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.25) transparent;
+}
+
 .track{
   display: flex;
   gap: 12px;
@@ -149,6 +176,8 @@ a:hover{ text-decoration: underline; }
   display: none;                /* Chrome/Safari: Scrollbar ausblenden */
 }
 .track::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.12); border-radius: 999px; }
+
+
 
 .slide{
   flex: 0 0 auto;
