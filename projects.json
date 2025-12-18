@@ -3,83 +3,125 @@
     {
       "id": "video",
       "title": "Videoproduktion",
-      "subtitle": "Schnitt, Motion, Doku, Teaser",
+      "subtitle": "YouTube, lokale Videos",
       "items": [
         {
-          "title": "Teaser Beispiel",
+          "title": "YouTube Demo",
           "meta": "2025 · YouTube",
-          "tags": ["Edit", "Teaser"],
-          "description": "Beispiel Eintrag. Ersetzen durch dein echtes Projekt.",
-          "media": { "type": "youtube", "youtubeId": "dQw4w9WgXcQ" },
-          "links": [{ "label": "Link", "href": "https://example.com" }]
+          "tags": ["Video", "Embed"],
+          "description": "Test für YouTube Einbettung.",
+          "media": {
+            "type": "youtube",
+            "youtubeId": "dQw4w9WgXcQ"
+          },
+          "links": [
+            { "label": "YouTube", "href": "https://youtube.com" }
+          ]
+        },
+        {
+          "title": "Lokales Video",
+          "meta": "2025 · MP4",
+          "tags": ["Video", "Local"],
+          "description": "Test für lokales MP4 Video.",
+          "media": {
+            "type": "video",
+            "src": "assets/videos/demo.mp4"
+          },
+          "links": []
         }
       ]
     },
-    {
-      "id": "game",
-      "title": "Game Development",
-      "subtitle": "Prototypen, Mechanics, Tools",
-      "items": []
-    },
+
     {
       "id": "photo",
       "title": "Fotografie",
-      "subtitle": "Serien, Auswahl, Prints",
+      "subtitle": "Einzelbilder und Serien",
       "items": [
         {
-          "title": "Foto Beispiel",
-          "meta": "2024 · Auswahl",
-          "tags": ["Portrait", "Light"],
-          "description": "Beispiel Eintrag. Ersetzen durch dein echtes Projekt.",
-          "media": { "type": "image", "src": "assets/images/cover.jpg", "alt": "Cover" },
-          "links": [{ "label": "Download (optional)", "href": "assets/files/sample.pdf" }]
+          "title": "Einzelbild",
+          "meta": "2024 · Foto",
+          "tags": ["Image"],
+          "description": "Test für einzelnes Bild.",
+          "media": {
+            "type": "image",
+            "src": "assets/images/photo1.jpg",
+            "alt": "Einzelbild"
+          },
+          "links": []
+        },
+        {
+          "title": "3×3 Bildgrid",
+          "meta": "2024 · Serie",
+          "tags": ["Grid", "Gallery"],
+          "description": "Test für 3×3 Bild-Grid mit Hover und Lightbox.",
+          "media": {
+            "type": "imageGrid",
+            "images": [
+              "assets/images/grid1.jpg",
+              "assets/images/grid2.jpg",
+              "assets/images/grid3.jpg",
+              "assets/images/grid4.jpg",
+              "assets/images/grid5.jpg",
+              "assets/images/grid6.jpg",
+              "assets/images/grid7.jpg",
+              "assets/images/grid8.jpg",
+              "assets/images/grid9.jpg"
+            ]
+          },
+          "links": []
         }
       ]
     },
+
     {
       "id": "modeling",
-      "title": "Modellierung",
-      "subtitle": "Blender, GLB, Shading",
+      "title": "3D Modellierung",
+      "subtitle": "Blender GLB",
       "items": [
         {
-          "title": "3D Beispiel",
-          "meta": "2025 · Blender GLB",
+          "title": "3D Modell Demo",
+          "meta": "2025 · Blender",
           "tags": ["3D", "GLB"],
-          "description": "Beispiel Eintrag. Lege eine echte .glb Datei unter assets/models/ ab und setze src korrekt.",
-          "media": { "type": "model", "src": "assets/models/demo.glb", "poster": "assets/images/demo_poster.jpg" },
-          "links": [{ "label": "Download GLB", "href": "assets/models/demo.glb" }]
+          "description": "Test für interaktives GLB Modell.",
+          "media": {
+            "type": "model",
+            "src": "assets/models/demo.glb",
+            "poster": "assets/images/model_poster.jpg"
+          },
+          "links": [
+            { "label": "Download GLB", "href": "assets/models/demo.glb" }
+          ]
         }
       ]
     },
+
     {
       "id": "software",
       "title": "Software Development",
-      "subtitle": "Apps, Prototypen, Tools",
+      "subtitle": "Screenshots, Downloads",
       "items": [
         {
-          "title": "Mercury Messenger",
-          "meta": "2025 · JavaFX",
-          "tags": ["Java", "JavaFX", "Client/Server"],
-          "description": "Client GUI, Server Kommunikation, Packaging via jpackage. Beispieltext, bitte konkretisieren.",
-          "media": { "type": "image", "src": "assets/images/mercury.jpg", "alt": "Mercury Screenshot" },
-          "links": [{ "label": "GitHub", "href": "https://github.com/" }]
+          "title": "Software Screenshot",
+          "meta": "2025 · App",
+          "tags": ["Software"],
+          "description": "Test für Screenshot als Bild.",
+          "media": {
+            "type": "image",
+            "src": "assets/images/software.jpg",
+            "alt": "Software Screenshot"
+          },
+          "links": [
+            { "label": "GitHub", "href": "https://github.com" }
+          ]
         }
       ]
     },
+
     {
-      "id": "audio",
-      "title": "Audioproduktion",
-      "subtitle": "Sounddesign, Mix, Podcast",
-      "items": [
-        {
-          "title": "Podcast Beispiel",
-          "meta": "2025 · Audio",
-          "tags": ["Mix", "Voice"],
-          "description": "Beispiel Eintrag. Wenn du Audio direkt einbetten willst, sag Bescheid, dann ergänze ich Audio Player Support.",
-          "media": { "type": "image", "src": "assets/images/audio.jpg", "alt": "Audio Cover" },
-          "links": [{ "label": "Download", "href": "assets/files/sample.mp3" }]
-        }
-      ]
+      "id": "empty",
+      "title": "Leeres Karussell",
+      "subtitle": "Soll trotzdem sichtbar sein",
+      "items": []
     }
   ]
 }
