@@ -140,10 +140,14 @@ a:hover{ text-decoration: underline; }
   gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 6px;
-  scrollbar-width: thin;
+  padding-bottom: 6px;          /* kann bleiben, damit sich die Höhe nicht ändert */
+  scrollbar-width: none;        /* Firefox: Scrollbar ausblenden */
+  -ms-overflow-style: none;     /* Legacy Edge/IE: Scrollbar ausblenden */
 }
-.track::-webkit-scrollbar{ height: 10px; }
+
+.track::-webkit-scrollbar{
+  display: none;                /* Chrome/Safari: Scrollbar ausblenden */
+}
 .track::-webkit-scrollbar-thumb{ background: rgba(255,255,255,0.12); border-radius: 999px; }
 
 .slide{
