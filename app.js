@@ -265,12 +265,35 @@ function renderMedia(m, ctx) {
   if (!m || !m.type) return el;
 
   if (m.type === "image") {
-    const img = document.createElement("img");
-    img.loading = "lazy";
-    img.src = m.src;
-    img.alt = m.alt ?? "";
-    return img;
-  }
+  const img = document.createElement("img");
+  img.loading = "lazy";
+  img.src = m.src;
+  img.alt = m.alt ?? "";
+
+  // Klick: Lightbox öffnen.
+  // Wenn wir NICHT im Modal sind: erst Projekt-Modal dahinter öffnen, dann Lightbox.
+  img.style.cursor = "zoom-in";
+  img.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const imgs = [m.src];
+
+    // Card/Seite: Modal im Hintergrund öffnen (falls gewünscht), dann Lightbox.
+    if (ctx?.openProjectModalOnGridClick && ctx?.catId && typeof ctx.projectIndex === "number") {
+      if (!modal.isOpen()) {
+        modal.open(ctx.catId, ctx.projectIndex);
+        setTimeout(() => gridLightbox.open(imgs, 0), 0);
+        return;
+      }
+    }
+
+    // Modal: nur Lightbox öffnen
+    gridLightbox.open(imgs, 0);
+  });
+
+  return img;
+}
+
 
   if (m.type === "video") {
     const v = document.createElement("video");
