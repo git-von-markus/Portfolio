@@ -228,6 +228,17 @@
             "youtubeId": "8OP7Hw8utLc"
           },
           "links": []
+        },
+        {
+          "title": "YouTube Demo",
+          "meta": "2024 · YouTube · Privat",
+          "tags": ["Video", "Embed"],
+          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "media": {
+            "type": "youtube",
+            "youtubeId": "8xN4XLNo8kU"
+          },
+          "links": []
         }
       ]
     },
@@ -238,13 +249,49 @@
       "subtitle": "Soll trotzdem sichtbar sein",
       "items": [
         {
+          "title": "Webseitenentwurf Günter Schulte",
+          "meta": "2024 · Webseite · Studium",
+          "tags": ["Webdesign", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/WebsiteSchulte.jpg",
+            "alt": "KalenderPWA"
+          },
+          "links": []
+        },
+        {
           "title": "Kalender PWA",
           "meta": "2025 · Webseite · Studium · Programmierung",
-          "tags": ["Programmierung", "Webdesign", "Studium"],
+          "tags": ["Webdesign", "Studium"],
           "description": "...",
           "media": {
             "type": "image",
             "src": "assets/images/ScreenshotKalenderPWA.jpg",
+            "alt": "KalenderPWA"
+          },
+          "links": []
+        },
+        {
+          "title": "Webseitenentwurf Natur findet Stadt",
+          "meta": "2024 · Webseite · Studium",
+          "tags": ["Webdesign", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/WebsiteNaturfindetStadt.jpg",
+            "alt": "KalenderPWA"
+          },
+          "links": []
+        },
+        {
+          "title": "Webseitenentwurf Natur findet Stadt",
+          "meta": "2025 · Webseite · Studium",
+          "tags": ["Webdesign", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/WebsiteNaturfindetStadt.jpg",
             "alt": "KalenderPWA"
           },
           "links": []
