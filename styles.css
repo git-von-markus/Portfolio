@@ -604,9 +604,17 @@ a:hover{ text-decoration: underline; }
 .footerButtons{
   display:flex;
   gap:14px;
-  justify-content:center;
+   justify-self: center;
   flex-wrap:wrap;
 }
+
+.footerBarGrid{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;  /* links | mitte | rechts */
+  align-items: center;
+  gap: 16px;
+}
+
 .footerBtn{
   padding: 12px 18px;
   border-radius: 14px;
@@ -620,19 +628,27 @@ a:hover{ text-decoration: underline; }
   border-top: 1px solid rgba(255,255,255,0.10);
 }
 .footerBarInner{
+  max-width: none;
+  width: 100%;
   padding: 18px 18px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:16px;
+  margin: 0;
 }
-.footerCopy{ color: var(--muted); font-size: 13px; }
+.footerCopy{ 
+  color: var(--muted); 
+  font-size: 13px; 
+  justify-self: start;
+  text-align: left;
+}
 
 .footerLegal{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
-  justify-content:flex-end;
+  justify-self: end;
 }
 .footerLegalCard{
   appearance: none;
