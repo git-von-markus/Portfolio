@@ -6,7 +6,7 @@
       "subtitle": "Aktuelle Projekte aus dem Studium, Arbeit, Ehrenamt und Privaten",
       "items": [
         {
-          "title": "FallingLeaves",
+          "title": "Puzzelspiel FallingLeaves",
           "meta": "2025 · App · Studium · Programmierung",
           "tags": ["Programmierung", "Game"],
           "description": "...",
@@ -29,7 +29,7 @@
           "links": []
         },
         {
-          "title": "Galaxy Trucker",
+          "title": "Interaktives Spiel Galaxy Trucker",
           "meta": "2025 · MMI · Studium · Programmierung",
           "tags": ["Programmierung", "Game"],
           "description": "...",
@@ -62,7 +62,7 @@
         },
         {
           "title": "Sammlung Urbane Natur",
-          "meta": "2024/2025 · Serie · Privat · Bildkomosition",
+          "meta": "2024/2025 · Serie · Privat · Bildkomposition",
           "tags": ["Foto", "Gallerie"],
           "description": "...",
           "media": {
@@ -103,7 +103,7 @@
       "items": [
         {
           "title": "Hand vs Hardware",
-          "meta": "2024/2025 · MMI · Studium · Programmierung",
+          "meta": "2024/2025 · MMI · Studium · Programmierung · Spieleentwicklung",
           "tags": ["Programmierung", "Game"],
           "description": "...",
           "media": {
@@ -146,7 +146,7 @@
       "subtitle": "...",
       "items": [
         {
-          "title": "3D Modell Demo",
+          "title": "Schwert&Schild",
           "meta": "2025 · Blender · Studium",
           "tags": ["3D", "GLB"],
           "description": "...",
@@ -158,7 +158,7 @@
           "links": []
         },  
         {
-          "title": "3D Modell Demo",
+          "title": "Historische Kegelbahn",
           "meta": "2025 · Blender · Studium",
           "tags": ["3D", "GLB"],
           "description": "...",
@@ -170,7 +170,7 @@
           "links": []
         },
         {
-          "title": "UFO Animation",
+          "title": "Ball with Tail Animation",
           "meta": "2025 · MP4 · Studium · Animation",
           "tags": ["3D", "Video", "Animation"],
           "description": "...",
@@ -183,7 +183,7 @@
         {
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
-          "tags": ["3D", "GLB"],
+          "tags": ["3D"],
           "description": "...",
           "media": {
             "type": "image",
@@ -203,7 +203,7 @@
         {
           "title": "Mercury Messenger",
           "meta": "2024/2025 · App · Studium",
-          "tags": ["Software"],
+          "tags": ["Software", "Programmierung"],
           "description": "...",
           "media": {
             "type": "image",
@@ -213,10 +213,10 @@
           "links": []
         },
         {
-          "title": "Software Screenshot",
+          "title": "RTPS-Streaming Versuchsaufbau",
           "meta": "2025 · App · Studium",
           "tags": ["Software", "Programmierung"],
-          "description": "Test für Screenshot als Bild.",
+          "description": "...",
           "media": {
             "type": "image",
             "src": "assets/images/rtps-kommunikation.jpg",
@@ -276,7 +276,7 @@
         {
           "title": "Webseitenentwurf Günter Schulte",
           "meta": "2024 · Webseite · Studium",
-          "tags": ["Webdesign", "Studium"],
+          "tags": ["Webdesign"],
           "description": "...",
           "media": {
             "type": "image",
@@ -288,7 +288,7 @@
         {
           "title": "Kalender PWA",
           "meta": "2025 · Webseite · Studium · Programmierung",
-          "tags": ["Webdesign", "Programmierung", "Studium"],
+          "tags": ["Webdesign", "Programmierung"],
           "description": "...",
           "media": {
             "type": "image",
@@ -300,7 +300,7 @@
         {
           "title": "DishDash",
           "meta": "2024 · Webseite · Studium · Programmierung",
-          "tags": ["Webdesign", "Programmierung", "Studium"],
+          "tags": ["Webdesign", "Programmierung"],
           "description": "...",
           "media": {
             "type": "image",
@@ -312,7 +312,7 @@
         {
           "title": "Webseitenentwurf Natur findet Stadt",
           "meta": "2025 · Webseite · Studium",
-          "tags": ["Webdesign", "Studium"],
+          "tags": ["Webdesign"],
           "description": "...",
           "media": {
             "type": "image",
@@ -324,7 +324,7 @@
         {
           "title": "Dartzähler",
           "meta": "2022 · Webseite · Schule",
-          "tags": ["Webdesign", "Programmierung", "Studium"],
+          "tags": ["Webdesign", "Programmierung"],
           "description": "...",
           "media": {
             "type": "image",

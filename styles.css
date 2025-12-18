@@ -224,6 +224,7 @@ a:hover{ text-decoration: underline; }
 .media{
   border-top: 1px solid var(--line);
   background: rgba(0,0,0,0.25);
+   overflow: hidden; /* wichtig, sonst zoomt das Bild aus dem Rahmen */
 }
 
 .media img, .media video, model-viewer, .ytWrap{
@@ -231,6 +232,14 @@ a:hover{ text-decoration: underline; }
   display:block;
   aspect-ratio: 16 / 10;
   object-fit: cover;
+}
+
+.media img{
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.media img:hover{
+  transform: scale(1.05);
 }
 
 .projectModalMedia model-viewer{
