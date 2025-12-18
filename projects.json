@@ -13,27 +13,27 @@
       "subtitle": "Einzelbilder und Serien",
       "items": [
         {
-          "title": "Einzelbild",
-          "meta": "2024 · Foto",
+          "title": "Werbefoto Handball",
+          "meta": "2024 · Foto · Privat",
           "tags": ["Image"],
           "description": "Test für einzelnes Bild.",
           "media": {
             "type": "image",
-            "src": "assets/images/photo1.jpg",
+            "src": "assets/images/Werbung_IvoPetkov.jpg",
             "alt": "Einzelbild"
           },
           "links": []
         },
         {
-          "title": "3×3 Bildgrid",
-          "meta": "2024 · Serie",
-          "tags": ["Grid", "Gallery"],
+          "title": "Sammlung Urbane Natur",
+          "meta": "2024/2025 · Serie · Privat",
+          "tags": ["Image", "Gallery"],
           "description": "Test für 3×3 Bild-Grid mit Hover und Lightbox.",
           "media": {
             "type": "imageGrid",
             "images": [
-              "assets/images/grid1.jpg",
-              "assets/images/grid2.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_1.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_2.jpg",
               "assets/images/grid3.jpg",
               "assets/images/grid4.jpg",
               "assets/images/grid5.jpg",
@@ -66,7 +66,7 @@
           "description": "Test für interaktives GLB Modell.",
           "media": {
             "type": "model",
-            "src": "assets/models/demo.glb",
+            "src": "assets/models/Kegelbahn.glb",
             "poster": "assets/images/model_poster.jpg"
           },
           "links": []
@@ -114,7 +114,7 @@
           "title": "YouTube Demo",
           "meta": "2025 · YouTube",
           "tags": ["Video", "Embed"],
-          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
+          "description": "Test für YouTube Einbettung. ",
           "media": {
             "type": "youtubePlaylist",
             "playlistId": "PLGiXlQ_q2V4IB2NITkeGA9XMK0Wm3Pw0Z"
