@@ -52,7 +52,7 @@
           "title": "Werbefoto Handball",
           "meta": "2024 · Foto · Privat · Bildbearbeitung",
           "tags": ["Foto"],
-          "description": "Test für einzelnes Bild.",
+          "description": "...",
           "media": {
             "type": "image",
             "src": "assets/images/Werbung_IvoPetkov.jpg",
@@ -299,7 +299,7 @@
         },
         {
           "title": "DishDash",
-          "meta": "2024 · Webseite · Studium · Programmierung",
+          "meta": "2025 · Webseite · Studium · Programmierung",
           "tags": ["Webdesign", "Programmierung"],
           "description": "...",
           "media": {
@@ -311,7 +311,7 @@
         },
         {
           "title": "Webseitenentwurf Natur findet Stadt",
-          "meta": "2025 · Webseite · Studium",
+          "meta": "2024 · Webseite · Studium",
           "tags": ["Webdesign"],
           "description": "...",
           "media": {
