@@ -1,37 +1,30 @@
-/* =========================================================
-   CSS VARIABLES
-   ========================================================= */
-
+/* =========================
+   CSS Variables
+   ========================= */
 :root{
-  --bg: #0b0e14;
+  --bg: #0b0f16;
   --card: rgba(255,255,255,0.06);
   --line: rgba(255,255,255,0.12);
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.6);
+  --text: rgba(255,255,255,0.95);
+  --muted: rgba(255,255,255,0.65);
   --shadow: 0 20px 60px rgba(0,0,0,0.45);
 }
 
-/* =========================================================
-   BASE
-   ========================================================= */
-
-*{
-  box-sizing: border-box;
-}
-
-html, body{
-  margin: 0;
-  padding: 0;
-}
+/* =========================
+   Base
+   ========================= */
+*{ box-sizing: border-box; }
 
 body{
+  margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   color: var(--text);
   background: var(--bg);
   position: relative;
+  min-height: 100vh;
 }
 
-/* Fixed gradient background (never clipped) */
+/* Fixed, dynamic background */
 body::before{
   content:"";
   position: fixed;
@@ -44,94 +37,40 @@ body::before{
     var(--bg);
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(14px);
-  background: rgba(0,0,0,0.35);
-  border-bottom: 1px solid var(--line);
-}
-
-.headerInner{
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 18px;
-}
-
-.headerTitle{
-  font-weight: 800;
-}
-
-.headerSub{
-  font-size: 12px;
-  color: var(--muted);
-}
-
-#searchInput{
-  margin-left: auto;
-  padding: 10px 14px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.08);
-  color: var(--text);
-}
-
-/* =========================================================
-   CATEGORY CHIPS
-   ========================================================= */
-
-#categoryChips{
-  display: flex;
-  gap: 8px;
-  padding: 10px 18px;
-  flex-wrap: wrap;
-}
-
-.chip{
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.06);
-  color: var(--text);
-  text-decoration: none;
-}
-
-/* =========================================================
-   SECTIONS & CAROUSEL
-   ========================================================= */
-
+/* =========================
+   Layout
+   ========================= */
 main{
-  padding: 18px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .sectionCard{
-  margin-bottom: 36px;
+  margin-bottom: 48px;
 }
 
 .sectionHead{
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  align-items: center;
+  margin-bottom: 14px;
 }
 
 .sectionTitle{
   margin: 0;
   font-size: 22px;
+  font-weight: 800;
 }
 
 .sectionSub{
-  font-size: 13px;
   color: var(--muted);
+  font-size: 13px;
 }
 
+/* =========================
+   Carousel
+   ========================= */
 .carousel{
   overflow: hidden;
 }
@@ -141,52 +80,59 @@ main{
   gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .slide{
   flex: 0 0 auto;
 }
 
-/* =========================================================
-   CARDS
-   ========================================================= */
+.carouselControls{
+  display: flex;
+  gap: 8px;
+}
 
+/* =========================
+   Cards
+   ========================= */
 .card{
   width: min(520px, 92vw);
-  border-radius: 22px;
+  border-radius: 18px;
   background: var(--card);
   border: 1px solid var(--line);
   overflow: hidden;
-  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
 }
 
 .cardHeader{
-  padding: 14px 14px 10px;
+  padding: 14px;
 }
 
 .cardTitle{
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .cardMeta{
   font-size: 12px;
   color: var(--muted);
+  margin-top: 4px;
 }
 
 .badges{
   display: flex;
   gap: 6px;
-  margin-top: 6px;
   flex-wrap: wrap;
+  margin-top: 6px;
 }
 
 .badge{
   font-size: 11px;
   padding: 4px 8px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.10);
   border: 1px solid var(--line);
 }
 
@@ -197,11 +143,11 @@ main{
 .media img,
 .media video,
 .media model-viewer,
-.media iframe{
+.media .ytWrap{
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
 .cardBody{
@@ -210,7 +156,7 @@ main{
 
 .desc{
   font-size: 14px;
-  line-height: 1.45;
+  color: var(--muted);
 }
 
 .desc.truncated{
@@ -226,57 +172,36 @@ main{
   margin-top: 10px;
 }
 
-/* =========================================================
-   IMAGE GRID (normal view)
-   ========================================================= */
-
-.imageGrid{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-rows: repeat(3,1fr);
-  gap: 6px;
-  padding: 10px;
-}
-
-.imageGridItem{
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-
-.imageGridItem img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 180ms ease;
-}
-
-.imageGridItem:hover img{
-  transform: scale(1.12);
-}
-
-.imageGridItem.empty{
-  border-style: dashed;
-  opacity: 0.4;
-}
-
-/* =========================================================
-   BUTTONS (unified behavior)
-   ========================================================= */
-
+/* =========================
+   Buttons – unified
+   ========================= */
 .btn,
 .iconBtn,
 .projectModalNavBtn,
 .gridLightboxNavBtn,
 .projectModalClose,
 .gridLightboxClose{
-  padding: 10px 14px;
-  border-radius: 14px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,0.08);
-  color: var(--text);
   cursor: pointer;
-  transition: background 160ms ease, transform 120ms ease;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
+  color: var(--text);
+  transition:
+    background 160ms ease,
+    transform 120ms ease,
+    border-color 160ms ease;
+}
+
+.btn{
+  padding: 8px 14px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.iconBtn{
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
 }
 
 .btn:hover,
@@ -298,10 +223,43 @@ main{
   transform: scale(0.96);
 }
 
-/* =========================================================
-   PROJECT MODAL
-   ========================================================= */
+/* =========================
+   Image Grid (card)
+   ========================= */
+.imageGrid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  gap: 6px;
+  padding: 10px;
+}
 
+.imageGridItem{
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.imageGridItem img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 180ms ease;
+}
+
+.imageGridItem:hover img{
+  transform: scale(1.1);
+}
+
+.imageGridItem.empty{
+  border-style: dashed;
+  opacity: 0.45;
+}
+
+/* =========================
+   Project Modal
+   ========================= */
 .projectModal{
   position: fixed;
   inset: 0;
@@ -309,6 +267,7 @@ main{
   z-index: 9000;
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(12px);
+  padding: 18px;
 }
 
 .projectModal.open{
@@ -320,40 +279,61 @@ main{
 .projectModalInner{
   width: min(1200px, 98vw);
   max-height: 92vh;
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
-  background: rgba(10,14,22,0.72);
   border: 1px solid var(--line);
+  background: rgba(10,14,22,0.72);
+}
+
+.projectModalTopbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
 .projectModalBody{
   display: grid;
+  grid-template-columns: 1.7fr 1fr;
 }
 
-@media (min-width: 980px){
-  .projectModalBody{
-    grid-template-columns: 1.7fr 1fr;
-  }
-}
-
-.projectModalMedia img,
-.projectModalMedia video,
-.projectModalMedia model-viewer,
-.projectModalMedia iframe{
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+.projectModalMedia{
+  background: rgba(0,0,0,0.25);
 }
 
 .projectModalContent{
-  padding: 16px;
-  overflow: auto;
+  padding: 14px;
+  overflow-y: auto;
 }
 
-/* =========================================================
-   GRID LIGHTBOX
-   ========================================================= */
+.projectModalClose{
+  background: rgba(0,0,0,0.35);
+}
 
+/* Modal nav buttons */
+.projectModalNavBtn{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  z-index: 9100;
+}
+
+.projectModalNavBtn.prev{
+  left: calc(50% - min(1200px,98vw)/2 - 64px);
+}
+.projectModalNavBtn.next{
+  right: calc(50% - min(1200px,98vw)/2 - 64px);
+}
+
+.projectModal .projectModalNavBtn{ display: none; }
+.projectModal.open .projectModalNavBtn{ display: block; }
+
+/* =========================
+   Grid Lightbox
+   ========================= */
 .gridLightbox{
   position: fixed;
   inset: 0;
@@ -371,26 +351,42 @@ main{
 }
 
 .gridLightboxInner{
+  width: min(1200px,98vw);
+  max-height: 92vh;
   background: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 .gridLightboxMedia img{
   width: 100%;
-  height: min(78vh, 820px);
+  height: min(78vh,820px);
   object-fit: contain;
   display: block;
   border-radius: 16px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer{
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
-  padding: 24px;
+.gridLightboxClose{
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.35);
+  z-index: 12002;
 }
+
+.gridLightboxNavBtn{
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  z-index: 12001;
+}
+
+.gridLightboxNavBtn.prev{
+  left: calc(50% - min(1200px,98vw)/2 - 64px);
+}
+.gridLightboxNavBtn.next{
+  right: calc(50% - min(1200px,98vw)/2 - 64px);
+}
+
+.gridLightbox .gridLightboxNavBtn{ display: none; }
+.gridLightbox.open .gridLightboxNavBtn{ display: block; }
