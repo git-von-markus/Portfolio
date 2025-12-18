@@ -242,6 +242,15 @@ a:hover{ text-decoration: underline; }
   transform: scale(1.05);
 }
 
+.projectModalMedia img{
+  cursor: pointer;
+}
+
+.media img{
+  cursor: pointer;
+}
+
+
 .projectModalMedia model-viewer{
   aspect-ratio: 16 / 9;
   min-height: 520px;
