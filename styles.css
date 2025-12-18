@@ -7,6 +7,7 @@
   --line: rgba(255,255,255,0.12);
   --shadow: 0 20px 60px rgba(0,0,0,0.45);
   --r: 18px;
+  --topbar-h: 74px; /* ggf. 70–80 anpassen */
 }
 
 *{ box-sizing: border-box; }
@@ -37,20 +38,19 @@ body::before{
 a{ color: var(--text); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
-.wrap{ max-width: 1100px; margin: 0 auto; padding: 28px 18px 48px; }
+.wrap{
+  padding-top: var(--topbar-h);
+}
 
 .topbar{
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 10;
-  display:flex;
-  gap: 16px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 18px;
-  border-bottom: 1px solid var(--line);
-  background: rgba(10, 14, 22, 0.55);
+  left: 0;
+  right: 0;
+  z-index: 2000;
   backdrop-filter: blur(14px);
+  background: rgba(0,0,0,0.35);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 
 .brand{ display:flex; gap: 12px; align-items: center; }
@@ -556,3 +556,28 @@ a:hover{ text-decoration: underline; }
   .gridLightboxNavBtn.next{ right: 10px; }
 }
 
+.track{
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge legacy */
+}
+
+.track::-webkit-scrollbar{
+  display: none;                /* Chrome / Safari */
+}
+
+.stickyTitle{
+  margin-left: 14px;
+  margin-right: auto;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+  color: rgba(255,255,255,0.92);
+}
+
+.topbar.compact .stickyTitle{
+  opacity: 1;
+  transform: translateY(0);
+}

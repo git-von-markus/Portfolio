@@ -23,6 +23,8 @@ async function init() {
     const q = searchInput.value.trim().toLowerCase();
     renderSections(filterCategories(data.categories, q));
   });
+
+  setupStickyTitle();
 }
 
 async function loadData() {
@@ -466,6 +468,23 @@ function setupProjectModal() {
   };
 
 }
+
+function setupStickyTitle(){
+  const topbar = document.querySelector(".topbar");
+  const heroTitle = document.querySelector(".hero h1");
+  if(!topbar || !heroTitle) return;
+
+  const obs = new IntersectionObserver(([entry]) => {
+    if(entry.isIntersecting) topbar.classList.remove("compact");
+    else topbar.classList.add("compact");
+  }, {
+    threshold: 0,
+    rootMargin: "-70px 0px 0px 0px" // entspricht grob der Topbar-Höhe
+  });
+
+  obs.observe(heroTitle);
+}
+
 
 /* ---------------- ERROR ---------------- */
 
