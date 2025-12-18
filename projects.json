@@ -65,9 +65,9 @@
           "tags": ["3D", "GLB"],
           "description": "Test für interaktives GLB Modell.",
           "media": {
-            "type": "model",
-            "src": "assets/models/Schuessel.glb",
-            "poster": "assets/images/ScreenshotSchuessel.jpg"
+            "type": "image",
+            "src": "assets/images/ScreenshotSchuessel.jpg",
+            "alt": "3D-Schüssel"
           },
           "links": []
         },
@@ -91,7 +91,7 @@
           "media": {
             "type": "model",
             "src": "assets/models/Schuessel.glb",
-            "poster": "assets/images/ScreenshotSchertSchild.jpg"
+            "poster": "assets/images/ScreenshotSchuessel.jpg"
           },
           "links": []
         }
