@@ -484,23 +484,20 @@ function setupGridLightbox() {
   const overlay = document.createElement("div");
   overlay.className = "gridLightbox";
   overlay.innerHTML = `
-    <button class="gridLightboxNavBtn prev" type="button" aria-label="Vorheriges">‹</button>
-    <button class="gridLightboxNavBtn next" type="button" aria-label="Nächstes">›</button>
+  <button class="gridLightboxNavBtn prev" type="button" aria-label="Vorheriges">‹</button>
+  <button class="gridLightboxNavBtn next" type="button" aria-label="Nächstes">›</button>
 
-    <div class="gridLightboxInner" role="dialog" aria-modal="true" aria-label="Bildansicht">
-      <div class="gridLightboxTopbar">
-        <h3 class="gridLightboxTitle"></h3>
-        <button class="gridLightboxClose" type="button" aria-label="Schließen">✕</button>
-      </div>
-      <div class="gridLightboxMedia">
-        <img alt="" />
-      </div>
+  <div class="gridLightboxInner" role="dialog" aria-modal="true" aria-label="Bildansicht">
+    <button class="gridLightboxClose" type="button" aria-label="Schließen">✕</button>
+    <div class="gridLightboxMedia">
+      <img alt="" />
     </div>
-  `;
+  </div>
+`;
+
   document.body.appendChild(overlay);
 
   const imgEl = overlay.querySelector(".gridLightboxMedia img");
-  const titleEl = overlay.querySelector(".gridLightboxTitle");
   const closeBtn = overlay.querySelector(".gridLightboxClose");
   const prevBtn = overlay.querySelector(".gridLightboxNavBtn.prev");
   const nextBtn = overlay.querySelector(".gridLightboxNavBtn.next");
@@ -517,7 +514,6 @@ function setupGridLightbox() {
     if (images.length === 0) return;
     normalize();
     imgEl.src = images[idx];
-    titleEl.textContent = `${idx + 1} / ${images.length}`;
     const hasMany = images.length > 1;
     prevBtn.style.display = hasMany ? "" : "none";
     nextBtn.style.display = hasMany ? "" : "none";
