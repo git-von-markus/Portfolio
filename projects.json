@@ -66,8 +66,32 @@
           "description": "Test für interaktives GLB Modell.",
           "media": {
             "type": "model",
+            "src": "assets/models/Schuessel.glb",
+            "poster": "assets/images/ScreenshotSchuessel.jpg"
+          },
+          "links": []
+        },
+        {
+          "title": "3D Modell Demo",
+          "meta": "2025 · Blender",
+          "tags": ["3D", "GLB"],
+          "description": "Test für interaktives GLB Modell.",
+          "media": {
+            "type": "model",
             "src": "assets/models/Kegelbahn.glb",
             "poster": "assets/images/ScreenshotKegelbahn.jpg"
+          },
+          "links": []
+        },
+        {
+          "title": "3D Modell Demo",
+          "meta": "2025 · Blender",
+          "tags": ["3D", "GLB"],
+          "description": "Test für interaktives GLB Modell.",
+          "media": {
+            "type": "model",
+            "src": "assets/models/Schuessel.glb",
+            "poster": "assets/images/ScreenshotSchertSchild.jpg"
           },
           "links": []
         }
