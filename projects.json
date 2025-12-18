@@ -9,7 +9,7 @@
           "title": "Puzzelspiel FallingLeaves",
           "meta": "2025 · App · Studium · Programmierung",
           "tags": ["Programmierung", "Game"],
-          "description": "...",
+          "description": "Das Spiel ist als kleines Puzzlespiel konzipiert, in dem über mehrere Level hinweg ein Igel nach und nach mit immer mehr Blättern bedeckt wird. Ziel ist es, durch geschicktes Platzieren verschiedener Gegenstände den Weg der fallenden Blätter zu beeinflussen. Die Spielerinnen und Spieler lösen die einzelnen Level, indem sie die Bewegung der Blätter gezielt lenken und so die gewünschte Reaktion im Spiel auslösen. Die komplette Umsetzung erfolgt innerhalb der Unity Engine und umfasst sowohl das Gameplay-Design als auch die technische Realisierung.",
           "media": {
             "type": "image",
             "src": "assets/images/FallingLeaves.jpg",
@@ -32,7 +32,7 @@
           "title": "Interaktives Spiel Galaxy Trucker",
           "meta": "2025 · MMI · Studium · Programmierung",
           "tags": ["Programmierung", "Game"],
-          "description": "...",
+          "description": "Im Rahmen des Moduls Gestaltung haptischer Benutzerschnittstellen entsteht eine ambient-unterstützende Umsetzung des Brettspiels Galaxy Trucker. Ziel des Projekts ist es, das Spielerlebnis durch eine erweiterte, technische Umgebung zu ergänzen und zu intensivieren. Die Umsetzung findet in einem mehrsinnlichen Interaktionsraum statt, in dem visuelle, akustische und haptische Elemente miteinander kombiniert werden. Dadurch wird das Spiel nicht nur digital erweitert, sondern auch räumlich und atmosphärisch erfahrbar gemacht. Im Zuge der Entwicklung setze ich mich mit verschiedenen Themen auseinander, darunter die Arbeit mit der Unreal Engine, Sounddesign, Mikrocontroller-Programmierung sowie der Einsatz von 3D-Druck zur Erstellung physischer Komponenten. Das Projekt verbindet damit spielerische Interaktion mit technischer Umsetzung und gestalterischem Anspruch.",
           "media": {
             "type": "image",
             "src": "assets/images/GalaxyTrucker.jpg",
@@ -45,14 +45,14 @@
 
     {
       "id": "photo",
-      "title": "Fotografie",
-      "subtitle": "...",
+      "title": "Fotografie und Bildbearbeitung",
+      "subtitle": "Fotografische Arbeiten und Bildbearbeitungen mit Fokus auf Komposition, Licht und visuelle Wirkung.",
       "items": [
         {
           "title": "Werbefoto Handball",
           "meta": "2024 · Foto · Privat · Bildbearbeitung",
           "tags": ["Foto"],
-          "description": "...",
+          "description": "m Zuge der Videoerstellung für Ivo Petkov wurde ergänzend ein Werbebild erstellt. Dieses wurde für verschiedene Einsatzzwecke konzipiert und insbesondere für die Nutzung auf Social-Media-Plattformen wie Instagram optimiert. Ziel war es, eine visuell konsistente Ergänzung zum Video zu schaffen, die sich flexibel für digitale Werbung und Online-Präsenzen einsetzen lässt.",
           "media": {
             "type": "image",
             "src": "assets/images/Werbung_IvoPetkov.jpg",
@@ -64,7 +64,7 @@
           "title": "Sammlung Urbane Natur",
           "meta": "2024/2025 · Serie · Privat · Bildkomposition",
           "tags": ["Foto", "Gallerie"],
-          "description": "...",
+          "description": "In dieser Bilderserie wurde im Alltag und auf Wegen durch die Stadt bewusst nach Momenten gesucht, in denen sich urbane Strukturen und Natur begegnen. Die Fotografien setzen diese Kontraste und Übergänge in Szene und zeigen, wie präsent natürliche Elemente auch im städtischen Umfeld sind.",
           "media": {
             "type": "imageGrid",
             "images": [
@@ -85,7 +85,7 @@
           "title": "Beleg Digitale Bildbearbeitung",
           "meta": "2023/2024 · Foto · Studium · Bildbearbeitung",
           "tags": ["Foto"],
-          "description": "...",
+          "description": "In diesem Beleg sollte mithilfe verschiedener Bildbearbeitungsprogramme ein neues Bild geschaffen werden. Ziel war es, unterschiedliche Techniken erstmals auszuprobieren, neue Programme zu testen und deren Funktionen kennenzulernen. Der Fokus lag dabei weniger auf dem finalen Motiv als auf dem experimentellen Umgang mit Werkzeugen, Ebenen, Effekten und Bearbeitungsprozessen.",
           "media": {
             "type": "image",
             "src": "assets/images/City_in_a_Bubble.jpg",
@@ -181,7 +181,7 @@
           "links": []
         },
         {
-          "title": "3D Modell Demo",
+          "title": "Schüssel mit Äpfeln",
           "meta": "2025 · Blender · Studium",
           "tags": ["3D"],
           "description": "...",
@@ -230,13 +230,13 @@
     {
       "id": "video",
       "title": "Videoproduktion",
-      "subtitle": "...",
+      "subtitle": "Konzeption, Aufnahme und Bearbeitung von Videoformaten für unterschiedliche Einsatzzwecke, von kurzen Clips bis zu umfangreicheren Projekten. Fokus auf Bildsprache, Schnitt, Dramaturgie und eine stimmige Gesamtwirkung.",
       "items": [
         {
-          "title": "YouTube Demo",
+          "title": "Werbevideo Handball",
           "meta": "2024 · YouTube · Privat",
           "tags": ["Video"],
-          "description": "...",
+          "description": "Für den Handballprofi Ivo Petkov übernahm ich die Bearbeitung von Videomaterial mit dem Ziel, ihn gezielt in Szene zu setzen und sportliche Stärken visuell hervorzuheben. In enger Abstimmung entstand ein Video, das seinen persönlichen Vorstellungen entsprach und ihn authentisch repräsentiert. Das Ergebnis wurde von ihm als Werbematerial genutzt, um sich bei anderen Vereinen zu präsentieren.",
           "media": {
             "type": "youtube",
             "youtubeId": "8xN4XLNo8kU"
@@ -244,10 +244,10 @@
           "links": []
         },
         {
-          "title": "YouTube Demo",
+          "title": "Adventsgeschichten",
           "meta": "2021 · YouTube · Ehrenamt",
           "tags": ["Video"],
-          "description": "...",
+          "description": "Während der Corona-Lockdowns entstand diese Videoreihe. Ziel war es, auch unter eingeschränkten Bedingungen regelmäßig Inhalte zu produzieren und zu veröffentlichen. Ich übernahm dabei die Kameraarbeit, das Setdesign, den Schnitt sowie die Veröffentlichung der Videos. Von der Planung über die Umsetzung bis zur finalen Bereitstellung lag der gesamte Produktionsprozess in meiner Verantwortung.",
           "media": {
             "type": "youtubePlaylist",
             "playlistId": "PLGiXlQ_q2V4IB2NITkeGA9XMK0Wm3Pw0Z"
@@ -255,10 +255,10 @@
           "links": []
         },
         {
-          "title": "YouTube Demo",
+          "title": "Die Geister der HTW",
           "meta": "2025 · YouTube · Studium",
           "tags": ["Video"],
-          "description": "...",
+          "description": "Im Rahmen des Moduls Medienproduktion ist dieser Kurzfilm entstanden. Ziel des Projekts war es, den gesamten Produktionsprozess eines Films praxisnah umzusetzen und alle wichtigen Arbeitsschritte selbst zu übernehmen. Beginnend bei der Ideenfindung und Konzeption über die Planung und Durchführung der Dreharbeiten bis hin zur Postproduktion und der finalen Aufbereitung für DVD und weitere Speichermedien wurde das Projekt eigenständig realisiert. Dabei wurden sowohl gestalterische als auch technische Entscheidungen gemeinsam getroffen und umgesetzt. Die Arbeit erfolgte in einer Gruppe von drei Studierenden. Innerhalb des Teams wurden die verschiedenen Aufgabenbereiche wie Kameraarbeit, Schnitt, Beleuchtung und weitere produktionstechnische Themen regelmäßig gewechselt, sodass jede Person alle Phasen der Filmproduktion aktiv kennenlernen und praktisch anwenden konnte. Das Projekt diente nicht nur der technischen Umsetzung, sondern auch der Zusammenarbeit im Team, der strukturierten Planung und dem kreativen Arbeiten unter realistischen Rahmenbedingungen.",
           "media": {
             "type": "youtube",
             "youtubeId": "8OP7Hw8utLc"
