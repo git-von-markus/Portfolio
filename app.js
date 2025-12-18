@@ -6,8 +6,11 @@ const categoryChips = document.getElementById("categoryChips");
 yearEl.textContent = String(new Date().getFullYear());
 
 let data = null;
+const modal = setupProjectModal();
 
-init();
+init().catch(showFatal);
+
+/* ---------------- INIT ---------------- */
 
 async function init(){
   data = await loadData();
@@ -26,6 +29,8 @@ async function loadData(){
   return res.json();
 }
 
+/* ---------------- FILTER ---------------- */
+
 function filterCategories(categories, q){
   if(!q) return categories;
 
@@ -33,7 +38,9 @@ function filterCategories(categories, q){
     .map(cat => {
       const items = (cat.items ?? []).filter(p => {
         const hay = [
-          p.title, p.meta, p.description,
+          p.title,
+          p.meta,
+          p.description,
           ...(p.tags ?? [])
         ].filter(Boolean).join(" ").toLowerCase();
         return hay.includes(q);
@@ -42,6 +49,8 @@ function filterCategories(categories, q){
     })
     .filter(cat => (cat.items ?? []).length > 0);
 }
+
+/* ---------------- CATEGORY NAV ---------------- */
 
 function renderCategoryChips(categories){
   if(!categoryChips) return;
@@ -56,20 +65,28 @@ function renderCategoryChips(categories){
   }
 }
 
+/* ---------------- SECTIONS ---------------- */
+
 function renderSections(categories){
   sectionsEl.innerHTML = "";
 
   if(categories.length === 0){
-    sectionsEl.innerHTML = `<div class="sectionCard"><div class="cardBody"><p class="desc">Keine Treffer.</p></div></div>`;
+    sectionsEl.innerHTML = `
+      <div class="sectionCard">
+        <div class="cardBody">
+          <p class="desc">Keine Treffer.</p>
+        </div>
+      </div>
+    `;
     return;
   }
 
   for(const cat of categories){
-    sectionsEl.appendChild(section(cat));
+    sectionsEl.appendChild(renderSection(cat));
   }
 }
 
-function section(cat){
+function renderSection(cat){
   const wrap = document.createElement("section");
   wrap.className = "sectionCard";
   wrap.id = cat.id;
@@ -78,7 +95,6 @@ function section(cat){
   head.className = "sectionHead";
 
   const left = document.createElement("div");
-
   const title = document.createElement("h2");
   title.className = "sectionTitle";
   title.textContent = cat.title;
@@ -113,27 +129,32 @@ function section(cat){
     const empty = document.createElement("div");
     empty.className = "card";
     empty.style.width = "min(520px, 92vw)";
-    empty.innerHTML = `<div class="cardBody"><p class="desc">Noch keine Projekte in diesem Bereich.</p></div>`;
+    empty.innerHTML = `
+      <div class="cardBody">
+        <p class="desc">Noch keine Projekte in diesem Bereich.</p>
+      </div>
+    `;
     track.appendChild(empty);
   } else {
-    for(const p of items){
+    items.forEach((p, idx) => {
       const slide = document.createElement("div");
       slide.className = "slide";
-      slide.appendChild(projectCard(p));
+      slide.appendChild(projectCard(p, cat.id, idx));
       track.appendChild(slide);
-    }
+    });
   }
 
   prev.addEventListener("click", () => scrollByCard(track, -1));
-  next.addEventListener("click", () => scrollByCard(track,  1));
+  next.addEventListener("click", () => scrollByCard(track, 1));
 
   carousel.appendChild(track);
-
   wrap.appendChild(head);
   wrap.appendChild(carousel);
 
   return wrap;
 }
+
+/* ---------------- CAROUSEL ---------------- */
 
 function iconButton(text){
   const b = document.createElement("button");
@@ -145,20 +166,31 @@ function iconButton(text){
 
 function scrollByCard(track, dir){
   const firstSlide = track.querySelector(".slide");
-  const cardWidth = firstSlide ? firstSlide.getBoundingClientRect().width : 520;
-  const gap = 12;
-  track.scrollBy({ left: dir * (cardWidth + gap), behavior: "smooth" });
+  const cardWidth = firstSlide
+    ? firstSlide.getBoundingClientRect().width
+    : 520;
+  track.scrollBy({
+    left: dir * (cardWidth + 12),
+    behavior: "smooth"
+  });
 }
 
-function projectCard(p){
+/* ---------------- PROJECT CARD ---------------- */
+
+function projectCard(p, catId, index){
   const card = document.createElement("article");
   card.className = "card";
+  card.style.cursor = "pointer";
+
+  card.addEventListener("click", (e) => {
+    if(e.target.closest("a")) return;
+    modal.open(catId, index);
+  });
 
   const header = document.createElement("div");
   header.className = "cardHeader";
 
   const left = document.createElement("div");
-
   const title = document.createElement("h3");
   title.className = "cardTitle";
   title.textContent = p.title ?? "Projekt";
@@ -169,12 +201,12 @@ function projectCard(p){
 
   const badges = document.createElement("div");
   badges.className = "badges";
-  for(const t of (p.tags ?? [])){
+  (p.tags ?? []).forEach(t => {
     const b = document.createElement("span");
     b.className = "badge";
     b.textContent = t;
     badges.appendChild(b);
-  }
+  });
 
   left.appendChild(title);
   left.appendChild(meta);
@@ -190,12 +222,12 @@ function projectCard(p){
   body.className = "cardBody";
 
   const desc = document.createElement("p");
-  desc.className = "desc";
+  desc.className = "desc truncated";
   desc.textContent = p.description ?? "";
 
   const actions = document.createElement("div");
   actions.className = "actions";
-  for(const l of (p.links ?? [])){
+  (p.links ?? []).forEach(l => {
     const a = document.createElement("a");
     a.className = "btn";
     a.href = l.href;
@@ -203,7 +235,7 @@ function projectCard(p){
     a.rel = "noopener";
     a.textContent = l.label;
     actions.appendChild(a);
-  }
+  });
 
   body.appendChild(desc);
   if((p.links ?? []).length) body.appendChild(actions);
@@ -214,6 +246,8 @@ function projectCard(p){
 
   return card;
 }
+
+/* ---------------- MEDIA ---------------- */
 
 function renderMedia(m){
   const el = document.createElement("div");
@@ -242,9 +276,12 @@ function renderMedia(m){
     const wrap = document.createElement("div");
     wrap.className = "ytWrap";
     const iframe = document.createElement("iframe");
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframe.allowFullscreen = true;
-    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(m.youtubeId)}`;
+    iframe.src =
+      "https://www.youtube-nocookie.com/embed/" +
+      encodeURIComponent(m.youtubeId);
     wrap.appendChild(iframe);
     return wrap;
   }
@@ -254,14 +291,146 @@ function renderMedia(m){
     mv.setAttribute("src", m.src);
     if(m.poster) mv.setAttribute("poster", m.poster);
     mv.setAttribute("camera-controls", "");
-    mv.setAttribute("touch-action", "pan-y");
     mv.setAttribute("shadow-intensity", "0.8");
-    mv.setAttribute("ar", "");
     mv.setAttribute("loading", "lazy");
-    mv.setAttribute("reveal", "auto");
     mv.style.background = "rgba(0,0,0,0.12)";
     return mv;
   }
 
+  if(m.type === "imageGrid"){
+    const grid = document.createElement("div");
+    grid.className = "imageGrid";
+    (m.images ?? []).slice(0, 9).forEach(src => {
+      const cell = document.createElement("div");
+      cell.className = "imageGridItem";
+      const img = document.createElement("img");
+      img.src = src;
+      img.loading = "lazy";
+      cell.appendChild(img);
+      grid.appendChild(cell);
+    });
+    return grid;
+  }
+
   return el;
+}
+
+/* ---------------- MODAL ---------------- */
+
+function setupProjectModal(){
+  const overlay = document.createElement("div");
+  overlay.className = "projectModal";
+  overlay.innerHTML = `
+    <div class="projectModalInner">
+      <div class="projectModalTopbar">
+        <div>
+          <h3 class="projectModalTitle"></h3>
+          <div class="projectModalMeta"></div>
+        </div>
+        <button class="projectModalClose">✕</button>
+      </div>
+
+      <div style="position: relative;">
+        <button class="projectModalNavBtn prev">‹</button>
+        <button class="projectModalNavBtn next">›</button>
+
+        <div class="projectModalBody">
+          <div class="projectModalMedia"></div>
+          <div class="projectModalContent">
+            <div class="badges projectModalBadges"></div>
+            <p class="desc projectModalDesc"></p>
+            <div class="actions projectModalActions"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  const titleEl = overlay.querySelector(".projectModalTitle");
+  const metaEl = overlay.querySelector(".projectModalMeta");
+  const mediaEl = overlay.querySelector(".projectModalMedia");
+  const badgesEl = overlay.querySelector(".projectModalBadges");
+  const descEl = overlay.querySelector(".projectModalDesc");
+  const actionsEl = overlay.querySelector(".projectModalActions");
+
+  let catId = null;
+  let index = 0;
+
+  function render(){
+    const cat = data.categories.find(c => c.id === catId);
+    if(!cat) return;
+    const p = cat.items[index];
+
+    titleEl.textContent = p.title ?? "";
+    metaEl.textContent = [cat.title, p.meta].filter(Boolean).join(" · ");
+
+    badgesEl.innerHTML = "";
+    (p.tags ?? []).forEach(t => {
+      const b = document.createElement("span");
+      b.className = "badge";
+      b.textContent = t;
+      badgesEl.appendChild(b);
+    });
+
+    descEl.textContent = p.description ?? "";
+
+    actionsEl.innerHTML = "";
+    (p.links ?? []).forEach(l => {
+      const a = document.createElement("a");
+      a.className = "btn";
+      a.href = l.href;
+      a.target = l.href.startsWith("http") ? "_blank" : "_self";
+      a.rel = "noopener";
+      a.textContent = l.label;
+      actionsEl.appendChild(a);
+    });
+
+    mediaEl.innerHTML = "";
+    mediaEl.appendChild(renderMedia(p.media));
+  }
+
+  function open(c, i){
+    catId = c;
+    index = i;
+    overlay.classList.add("open");
+    document.body.style.overflow = "hidden";
+    render();
+  }
+
+  function close(){
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+    mediaEl.innerHTML = "";
+  }
+
+  overlay.addEventListener("click", e => {
+    if(e.target === overlay) close();
+  });
+
+  overlay.querySelector(".projectModalClose").onclick = close;
+  overlay.querySelector(".prev").onclick = () => { index--; render(); };
+  overlay.querySelector(".next").onclick = () => { index++; render(); };
+
+  window.addEventListener("keydown", e => {
+    if(!overlay.classList.contains("open")) return;
+    if(e.key === "Escape") close();
+    if(e.key === "ArrowLeft") { index--; render(); }
+    if(e.key === "ArrowRight") { index++; render(); }
+  });
+
+  return { open, close };
+}
+
+/* ---------------- ERROR ---------------- */
+
+function showFatal(err){
+  console.error(err);
+  sectionsEl.innerHTML = `
+    <div class="sectionCard">
+      <div class="cardBody">
+        <p class="desc"><b>Fehler:</b> Inhalte konnten nicht geladen werden.</p>
+      </div>
+    </div>
+  `;
 }

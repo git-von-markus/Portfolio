@@ -219,3 +219,146 @@ a:hover{ text-decoration: underline; }
   justify-content: center;
 }
 .dot{ opacity: 0.4; }
+
+/* --- Card description in carousel: truncated --- */
+.desc.truncated{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- Project modal overlay --- */
+.projectModal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+  padding: 18px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
+}
+
+.projectModal.open{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectModalInner{
+  width: min(1100px, 96vw);
+  max-height: min(92vh, 920px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(10, 14, 22, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.projectModalTopbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 12px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+}
+
+.projectModalTitle{
+  font-weight: 800;
+  margin: 0;
+  font-size: 16px;
+}
+
+.projectModalClose{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.92);
+  cursor: pointer;
+}
+
+.projectModalBody{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 980px){
+  .projectModalBody{
+    grid-template-columns: 1.3fr 1fr;
+  }
+}
+
+.projectModalMedia{
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,0.25);
+}
+
+@media (min-width: 980px){
+  .projectModalMedia{
+    border-bottom: none;
+    border-right: 1px solid var(--line);
+  }
+}
+
+.projectModalMedia img,
+.projectModalMedia video,
+.projectModalMedia model-viewer,
+.projectModalMedia .ytWrap{
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+@media (min-width: 980px){
+  .projectModalMedia img,
+  .projectModalMedia video,
+  .projectModalMedia model-viewer,
+  .projectModalMedia .ytWrap{
+    aspect-ratio: 16 / 11;
+  }
+}
+
+.projectModalContent{
+  padding: 14px 14px 16px;
+  overflow: auto;
+  max-height: min(92vh, 920px);
+}
+
+.projectModalMeta{
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.projectModalNav{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.projectModalNavBtn{
+  pointer-events: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.92);
+  cursor: pointer;
+}
+
+.projectModalNavBtn:hover{
+  background: rgba(255,255,255,0.16);
+}
+
+.projectModalNavBtn.prev{ left: 14px; }
+.projectModalNavBtn.next{ right: 14px; }
