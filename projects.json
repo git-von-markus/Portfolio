@@ -9,14 +9,12 @@
           "title": "YouTube Demo",
           "meta": "2025 · YouTube",
           "tags": ["Video", "Embed"],
-          "description": "Test für YouTube Einbettung.",
+          "description": "Test für YouTube Einbettung. dögjadsfgjökasöj lkö ajksföklsa<ö jklödsakjfjölaksjö ka<sdökfjsaödfjöksajöfklsklöfgölksaökjl öfjdfökdsaöfjsjökladfjöklsaklöfj",
           "media": {
             "type": "youtube",
             "youtubeId": "dQw4w9WgXcQ"
           },
-          "links": [
-            { "label": "YouTube", "href": "https://youtube.com" }
-          ]
+          "links": []
         },
         {
           "title": "Lokales Video",
