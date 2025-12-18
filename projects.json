@@ -14,20 +14,20 @@
       "items": [
         {
           "title": "Werbefoto Handball",
-          "meta": "2024 · Foto · Privat",
-          "tags": ["Image"],
+          "meta": "2024 · Foto · Privat · Bildbearbeitung",
+          "tags": ["Foto"],
           "description": "Test für einzelnes Bild.",
           "media": {
             "type": "image",
             "src": "assets/images/Werbung_IvoPetkov.jpg",
-            "alt": "Einzelbild"
+            "alt": "Werbung Ivo Petkov"
           },
           "links": []
         },
         {
           "title": "Sammlung Urbane Natur",
-          "meta": "2024/2025 · Serie · Privat",
-          "tags": ["Image", "Gallery"],
+          "meta": "2024/2025 · Serie · Privat · Bildkomosition",
+          "tags": ["Foto", "Gallerie"],
           "description": "Test für 3×3 Bild-Grid mit Hover und Lightbox.",
           "media": {
             "type": "imageGrid",
@@ -44,6 +44,18 @@
             ]
           },
           "links": []
+        },
+        {
+          "title": "Werbefoto Handball",
+          "meta": "2023/2024 · Foto · Studium · Bildbearbeitung",
+          "tags": ["Foto", "Studium"],
+          "description": "Test für einzelnes Bild.",
+          "media": {
+            "type": "image",
+            "src": "assets/images/City_in_a_Bubble.jpg",
+            "alt": "City in a Bubble"
+          },
+          "links": []
         }
       ]
     },
@@ -52,7 +64,32 @@
       "id": "game",
       "title": "Game Development",
       "subtitle": "Soll trotzdem sichtbar sein",
-      "items": []
+      "items": [
+        {
+          "title": "Connect4 | Konsole",
+          "meta": "2023/2024 · Konsole · Studium · Programmierung",
+          "tags": ["Programmierung", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/ScreenshotConnect4Console.jpg",
+            "alt": "Connect4Console"
+          },
+          "links": []
+        },
+        {
+          "title": "Connect4 | App",
+          "meta": "2024 · App · Studium · Programmierung",
+          "tags": ["Programmierung", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/ScreenshotConnect4App.jpg",
+            "alt": "Connect4App"
+          },
+          "links": []
+        }
+      ]
     },
 
     {
@@ -63,15 +100,15 @@
         {
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
-          "tags": ["3D", "GLB"],
+          "tags": ["3D", "GLB", "Stud"],
           "description": "Test für interaktives GLB Modell.",
           "media": {
-            "type": "image",
-            "src": "assets/images/ScreenshotSchuessel.jpg",
-            "alt": "3D-Schüssel"
+            "type": "model",
+            "src": "assets/models/SchwertSchild.glb",
+            "poster": "assets/images/ScreenshotSchwertSchild.jpg"
           },
           "links": []
-        },
+        },  
         {
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
@@ -85,14 +122,25 @@
           "links": []
         },
         {
+          "title": "UFO Animation",
+          "meta": "2025 · MP4 · Studium · Animation",
+          "tags": ["3D", "Video", "Animation"],
+          "description": "Test für lokales MP4 Video.",
+          "media": {
+            "type": "video",
+            "src": "assets/videos/UFO.mp4"
+          },
+          "links": []
+        },
+        {
           "title": "3D Modell Demo",
           "meta": "2025 · Blender · Studium",
-          "tags": ["3D", "Image"],
+          "tags": ["3D", "GLB"],
           "description": "Test für interaktives GLB Modell.",
           "media": {
-            "type": "model",
-            "src": "assets/models/SchwertSchild.glb",
-            "poster": "assets/images/ScreenshotSchwertSchild.jpg"
+            "type": "image",
+            "src": "assets/images/ScreenshotSchuessel.jpg",
+            "alt": "3D-Schüssel"
           },
           "links": []
         }
@@ -180,17 +228,6 @@
             "youtubeId": "8OP7Hw8utLc"
           },
           "links": []
-        },
-        {
-          "title": "UFO Animation",
-          "meta": "2025 · MP4 · Studium · Animation",
-          "tags": ["Video", "Local"],
-          "description": "Test für lokales MP4 Video.",
-          "media": {
-            "type": "video",
-            "src": "assets/videos/UFO.mp4"
-          },
-          "links": []
         }
       ]
     },
@@ -199,7 +236,20 @@
       "id": "web",
       "title": "Webdesign",
       "subtitle": "Soll trotzdem sichtbar sein",
-      "items": []
+      "items": [
+        {
+          "title": "Kalender PWA",
+          "meta": "2025 · Webseite · Studium · Programmierung",
+          "tags": ["Programmierung", "Webdesign", "Studium"],
+          "description": "...",
+          "media": {
+            "type": "image",
+            "src": "assets/images/ScreenshotKalenderPWA.jpg",
+            "alt": "KalenderPWA"
+          },
+          "links": []
+        }
+      ]
     }
   ]
 }
