@@ -556,11 +556,3 @@ a:hover{ text-decoration: underline; }
   .gridLightboxNavBtn.next{ right: 10px; }
 }
 
-.track{
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE / Edge legacy */
-}
-
-.track::-webkit-scrollbar{
-  display: none;                /* Chrome / Safari */
-}
