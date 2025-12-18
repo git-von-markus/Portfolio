@@ -233,6 +233,18 @@ a:hover{ text-decoration: underline; }
   object-fit: cover;
 }
 
+.media model-viewer{
+  aspect-ratio: 16 / 9;
+  min-height: 320px;
+}
+
+@media (min-width: 900px){
+  .media model-viewer{
+    aspect-ratio: 16 / 8;
+    min-height: 420px;
+  }
+}
+
 .ytWrap{ position: relative; }
 .ytWrap iframe{
   position:absolute; inset:0;
