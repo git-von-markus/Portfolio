@@ -607,12 +607,27 @@ a:hover{ text-decoration: underline; }
   justify-content:center;
   flex-wrap:wrap;
 }
+
+.footerRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
 .footerBtn{
   padding: 12px 18px;
   border-radius: 14px;
   background: rgba(0,0,0,0.35);
   border: 1px solid rgba(255,255,255,0.12);
   box-shadow: var(--shadow);
+}
+
+.footerButtons{
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .footerBar{
   margin-top: 18px;
@@ -629,10 +644,10 @@ a:hover{ text-decoration: underline; }
 .footerCopy{ color: var(--muted); font-size: 13px; }
 
 .footerLegal{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .footerLegalCard{
   appearance: none;
@@ -645,6 +660,17 @@ a:hover{ text-decoration: underline; }
 }
 .footerLegalCard:hover{
   background: rgba(255,255,255,0.10);
+}
+
+@media (max-width: 700px){
+  .footerRow{
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .footerLegal{
+    justify-content: center;
+  }
 }
 
 /* ---------- Legal modal (Impressum/Datenschutz) ---------- */
