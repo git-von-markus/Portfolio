@@ -321,30 +321,29 @@ function setupProjectModal(){
   const overlay = document.createElement("div");
   overlay.className = "projectModal";
   overlay.innerHTML = `
-    <div class="projectModalInner">
-      <div class="projectModalTopbar">
-        <div>
-          <h3 class="projectModalTitle"></h3>
-          <div class="projectModalMeta"></div>
-        </div>
-        <button class="projectModalClose">✕</button>
+  <button class="projectModalNavBtn prev" type="button" aria-label="Vorheriges">‹</button>
+  <button class="projectModalNavBtn next" type="button" aria-label="Nächstes">›</button>
+
+  <div class="projectModalInner">
+    <div class="projectModalTopbar">
+      <div>
+        <h3 class="projectModalTitle"></h3>
+        <div class="projectModalMeta"></div>
       </div>
+      <button class="projectModalClose" type="button" aria-label="Schließen">✕</button>
+    </div>
 
-      <div style="position: relative;">
-        <button class="projectModalNavBtn prev">‹</button>
-        <button class="projectModalNavBtn next">›</button>
-
-        <div class="projectModalBody">
-          <div class="projectModalMedia"></div>
-          <div class="projectModalContent">
-            <div class="badges projectModalBadges"></div>
-            <p class="desc projectModalDesc"></p>
-            <div class="actions projectModalActions"></div>
-          </div>
-        </div>
+    <div class="projectModalBody">
+      <div class="projectModalMedia"></div>
+      <div class="projectModalContent">
+        <div class="badges projectModalBadges"></div>
+        <p class="desc projectModalDesc"></p>
+        <div class="actions projectModalActions"></div>
       </div>
     </div>
-  `;
+  </div>
+`;
+
   document.body.appendChild(overlay);
 
   const titleEl = overlay.querySelector(".projectModalTitle");

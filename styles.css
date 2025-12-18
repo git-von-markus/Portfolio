@@ -342,9 +342,10 @@ a:hover{ text-decoration: underline; }
   pointer-events: none;
 }
 
+/* Modal nav buttons outside the modal box */
 .projectModalNavBtn{
   pointer-events: auto;
-  position: absolute;
+  position: fixed;                 /* wichtig: relativ zum Viewport/Overlay */
   top: 50%;
   transform: translateY(-50%);
   width: 48px;
@@ -354,14 +355,16 @@ a:hover{ text-decoration: underline; }
   background: rgba(255,255,255,0.10);
   color: rgba(255,255,255,0.92);
   cursor: pointer;
+  z-index: 10000;                  /* über dem Overlay */
 }
 
 .projectModalNavBtn:hover{
   background: rgba(255,255,255,0.16);
 }
 
-.projectModalNavBtn.prev{ left: 14px; }
-.projectModalNavBtn.next{ right: 14px; }
+.projectModalNavBtn.prev{ left: 18px; }
+.projectModalNavBtn.next{ right: 18px; }
+
 
 /* --- 3x3 Image Grid (media.type = imageGrid) --- */
 .imageGrid{
