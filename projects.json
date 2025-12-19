@@ -233,17 +233,6 @@
       "subtitle": "Konzeption, Aufnahme und Bearbeitung von Videoformaten für unterschiedliche Einsatzzwecke, von kurzen Clips bis zu umfangreicheren Projekten. Fokus auf Bildsprache, Schnitt, Dramaturgie und eine stimmige Gesamtwirkung.",
       "items": [
         {
-          "title": "Werbevideo Handball",
-          "meta": "2024 · YouTube · Privat",
-          "tags": ["Video"],
-          "description": "Für den Handballprofi Ivo Petkov übernahm ich die Bearbeitung von Videomaterial mit dem Ziel, ihn gezielt in Szene zu setzen und sportliche Stärken visuell hervorzuheben. In enger Abstimmung entstand ein Video, das seinen persönlichen Vorstellungen entsprach und ihn authentisch repräsentiert. Das Ergebnis wurde von ihm als Werbematerial genutzt, um sich bei anderen Vereinen zu präsentieren.",
-          "media": {
-            "type": "youtube",
-            "youtubeId": "8xN4XLNo8kU"
-          },
-          "links": []
-        },
-        {
           "title": "Adventsgeschichten",
           "meta": "2021 · YouTube · Ehrenamt",
           "tags": ["Video"],
@@ -262,6 +251,17 @@
           "media": {
             "type": "youtube",
             "youtubeId": "8OP7Hw8utLc"
+          },
+          "links": []
+        },
+        {
+          "title": "Werbevideo Handball",
+          "meta": "2024 · YouTube · Privat",
+          "tags": ["Video"],
+          "description": "Für den Handballprofi Ivo Petkov übernahm ich die Bearbeitung von Videomaterial mit dem Ziel, ihn gezielt in Szene zu setzen und sportliche Stärken visuell hervorzuheben. In enger Abstimmung entstand ein Video, das seinen persönlichen Vorstellungen entsprach und ihn authentisch repräsentiert. Das Ergebnis wurde von ihm als Werbematerial genutzt, um sich bei anderen Vereinen zu präsentieren.",
+          "media": {
+            "type": "youtube",
+            "youtubeId": "8xN4XLNo8kU"
           },
           "links": []
         }
