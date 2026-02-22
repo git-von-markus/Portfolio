@@ -399,6 +399,82 @@ function renderMedia(m, ctx) {
     return grid;
   }
 
+    if (m.type === "imageQuad") {
+    const wrap = document.createElement("div");
+    wrap.className = "imageQuad";
+
+    const imgs = Array.isArray(m.images) ? m.images.filter(Boolean).slice(0, 4) : [];
+    while (imgs.length < 4) imgs.push(""); // immer 4 Slots
+
+    // großes Bild (Index 0)
+    const big = document.createElement("div");
+    big.className = "imageQuadBig";
+
+    if (imgs[0]) {
+      const img = document.createElement("img");
+      img.src = imgs[0];
+      img.loading = "lazy";
+      img.alt = m.alt ?? "";
+      big.appendChild(img);
+
+      big.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        if (ctx?.openProjectModalOnGridClick && ctx?.catId && typeof ctx.projectIndex === "number") {
+          if (!modal.isOpen()) {
+            modal.open(ctx.catId, ctx.projectIndex);
+            setTimeout(() => gridLightbox.open(imgs, 0), 0);
+            return;
+          }
+        }
+
+        gridLightbox.open(imgs, 0);
+      });
+    } else {
+      big.classList.add("empty");
+    }
+
+    // thumbs (Index 1..3)
+    const thumbs = document.createElement("div");
+    thumbs.className = "imageQuadThumbs";
+
+    for (let i = 1; i < 4; i++) {
+      const cell = document.createElement("div");
+      cell.className = "imageQuadThumb";
+
+      const src = imgs[i];
+      if (src) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.loading = "lazy";
+        img.alt = "";
+        cell.appendChild(img);
+
+        cell.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          if (ctx?.openProjectModalOnGridClick && ctx?.catId && typeof ctx.projectIndex === "number") {
+            if (!modal.isOpen()) {
+              modal.open(ctx.catId, ctx.projectIndex);
+              setTimeout(() => gridLightbox.open(imgs, i), 0);
+              return;
+            }
+          }
+
+          gridLightbox.open(imgs, i);
+        });
+      } else {
+        cell.classList.add("empty");
+      }
+
+      thumbs.appendChild(cell);
+    }
+
+    wrap.appendChild(big);
+    wrap.appendChild(thumbs);
+    return wrap;
+  }
+
 
 
 

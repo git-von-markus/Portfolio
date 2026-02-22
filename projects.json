@@ -66,17 +66,12 @@
           "tags": ["Foto", "Gallerie"],
           "description": "In dieser Bilderserie wurde im Alltag und auf Wegen durch die Stadt bewusst nach Momenten gesucht, in denen sich urbane Strukturen und Natur begegnen. Die Fotografien setzen diese Kontraste und Übergänge in Szene und zeigen, wie präsent natürliche Elemente auch im städtischen Umfeld sind.",
           "media": {
-            "type": "imageGrid",
+            "type": "imageQuad", 
             "images": [
-              "assets/images/UrbaneNatur/UrbaneNatur_1.jpg",
+              "assets/images/UrbaneNatur/UrbaneNatur_8.jpg",
               "assets/images/UrbaneNatur/UrbaneNatur_2.jpg",
               "assets/images/UrbaneNatur/UrbaneNatur_3.jpg",
-              "assets/images/UrbaneNatur/UrbaneNatur_4.jpg",
-              "assets/images/UrbaneNatur/UrbaneNatur_5.jpg",
-              "assets/images/UrbaneNatur/UrbaneNatur_6.jpg",
-              "assets/images/UrbaneNatur/UrbaneNatur_7.jpg",
-              "assets/images/UrbaneNatur/UrbaneNatur_8.jpg",
-              "assets/images/UrbaneNatur/UrbaneNatur_9.jpg"
+              "assets/images/UrbaneNatur/UrbaneNatur_6.jpg"
             ]
           },
           "links": []

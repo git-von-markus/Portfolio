@@ -742,3 +742,55 @@ a:hover{ text-decoration: underline; }
 .icon-mail{
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M2 5.75A2.75 2.75 0 0 1 4.75 3h14.5A2.75 2.75 0 0 1 22 5.75v12.5A2.75 2.75 0 0 1 19.25 21H4.75A2.75 2.75 0 0 1 2 18.25V5.75zm2.3-.25L12 11.3l7.7-5.8H4.3zm15.7 1.9-5.5 4.15 5.5 4.15V7.4zM4 7.4v8.3l5.5-4.15L4 7.4zm7.05 4.9L4.3 17.5h15.4l-6.75-5.2-.9.65-.9-.65z'/%3E%3C/svg%3E");
 }
+
+/* --- 1 groß + 3 klein (media.type = imageQuad) --- */
+.imageQuad{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;          /* passt sich wie die anderen Mediatypen ein */
+  display: grid;
+  grid-template-rows: 2.35fr 1fr; /* groß nimmt mehr Raum, thumbs passen darunter */
+  gap: 6px;
+  padding: 10px;
+}
+
+.imageQuadBig,
+.imageQuadThumb{
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+
+.imageQuadBig img,
+.imageQuadThumb img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 180ms ease;
+}
+
+.imageQuadBig:hover img,
+.imageQuadThumb:hover img{
+  transform: scale(1.08);
+}
+
+.imageQuadThumbs{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+/* Optional: im Modal etwas mehr Luft */
+.projectModalMedia .imageQuad{
+  padding: 12px;
+}
+
+/* Leere Slots (falls mal <4 Bilder) */
+.imageQuadBig.empty,
+.imageQuadThumb.empty{
+  opacity: 0.35;
+}
