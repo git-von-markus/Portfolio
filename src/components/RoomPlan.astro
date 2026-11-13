@@ -1,0 +1,124 @@
+---
+// Grundriss des Interaktionsraums: drei Leinwände (270°), sechs Lüfter, Luftströme zur Mitte.
+interface Props { animate?: boolean; class?: string }
+const { animate = true, class: className = '' } = Astro.props;
+
+const C = { x: 260, y: 252 };
+const fans = [
+  { x: 180, y: 94 }, { x: 340, y: 94 },   // vorn
+  { x: 94, y: 172 }, { x: 94, y: 312 },   // links
+  { x: 426, y: 172 }, { x: 426, y: 312 }, // rechts
+];
+
+const flows = fans.flatMap((f, i) => {
+  const dx = C.x - f.x, dy = C.y - f.y;
+  const len = Math.hypot(dx, dy);
+  const d = { x: dx / len, y: dy / len };
+  const n = { x: -d.y, y: d.x };
+  const bend = i % 2 ? 9 : -9;
+  return [-11, 0, 11].map((o, j) => {
+    const s = { x: f.x + d.x * 22 + n.x * o * 0.5, y: f.y + d.y * 22 + n.y * o * 0.5 };
+    const reach = len * (0.62 - Math.abs(o) * 0.004);
+    const e = { x: f.x + d.x * reach + n.x * o * 1.7, y: f.y + d.y * reach + n.y * o * 1.7 };
+    const m = { x: (s.x + e.x) / 2 + n.x * (bend + o * 0.4), y: (s.y + e.y) / 2 + n.y * (bend + o * 0.4) };
+    return { d: `M${s.x.toFixed(1)} ${s.y.toFixed(1)} Q${m.x.toFixed(1)} ${m.y.toFixed(1)} ${e.x.toFixed(1)} ${e.y.toFixed(1)}`, delay: i * 110 + j * 40, arrow: o === 0 };
+  });
+});
+
+const fanAngle = (f: { x: number; y: number }) => (Math.atan2(C.y - f.y, C.x - f.x) * 180) / Math.PI;
+const audience = [[-10, -6], [8, -11], [-2, 8], [-16, 11], [14, 5], [3, -22], [-20, -16], [20, -14], [12, 20]];
+const r = 44;
+const a0 = { x: C.x - r * Math.SQRT1_2, y: C.y + r * Math.SQRT1_2 };
+const a1 = { x: C.x + r * Math.SQRT1_2, y: C.y + r * Math.SQRT1_2 };
+---
+<svg
+  class:list={['plan', className, { animate }]}
+  viewBox="0 0 520 450"
+  role="img"
+  aria-labelledby="plan-title"
+>
+  <title id="plan-title">Grundriss: drei Leinwände umgeben das Publikum zu 270 Grad, sechs Lüfter blasen zur Raummitte.</title>
+
+  <!-- Projektionsflächen -->
+  <g class="screen-glow">
+    <rect x="72" y="72" width="376" height="12" />
+    <rect x="72" y="72" width="12" height="306" />
+    <rect x="436" y="72" width="12" height="306" />
+  </g>
+  <path class="wall" d="M72 380 V72 H448 V380" />
+  <path class="open" d="M72 380 H448" />
+
+  <!-- Luftströme -->
+  <defs>
+    <marker id="plan-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" class="arrowhead" />
+    </marker>
+  </defs>
+  <g class="flows">
+    {flows.map((f) => <path d={f.d} style={`--delay:${f.delay}ms`} marker-end={f.arrow ? 'url(#plan-arrow)' : undefined} />)}
+  </g>
+
+  <!-- 270-Grad-Bogen -->
+  <path class="arc" d={`M${a0.x.toFixed(1)} ${a0.y.toFixed(1)} A${r} ${r} 0 1 1 ${a1.x.toFixed(1)} ${a1.y.toFixed(1)}`} />
+  <text class="label arc-label" x={C.x} y={C.y - r - 8} text-anchor="middle">270°</text>
+
+  <!-- Publikum -->
+  <g class="audience">
+    {audience.map(([x, y]) => <circle cx={C.x + x} cy={C.y + y} r="3.4" />)}
+  </g>
+
+  <!-- Lüfter -->
+  <g class="fans">
+    {fans.map((f) => (
+      <g transform={`translate(${f.x} ${f.y}) rotate(${fanAngle(f).toFixed(1)})`}>
+        <circle r="13" class="fan-body" />
+        <path class="fan-blade" d="M0 0 L-6 -9 M0 0 L10 1 M0 0 L-5 9" />
+      </g>
+    ))}
+  </g>
+
+  <!-- Beschriftung -->
+  <text class="label" x="260" y="56" text-anchor="middle">Leinwand vorn</text>
+  <text class="label" x="0" y="0" text-anchor="middle" transform="translate(54 226) rotate(-90)">Leinwand links</text>
+  <text class="label" x="0" y="0" text-anchor="middle" transform="translate(466 226) rotate(90)">Leinwand rechts</text>
+  <text class="label" x="260" y="404" text-anchor="middle">hinten offen</text>
+  <text class="label small" x={C.x} y={C.y + 46} text-anchor="middle">Publikum</text>
+</svg>
+
+<style>
+  .plan { width: 100%; height: auto; display: block; overflow: visible; }
+  .wall { fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: miter; }
+  .open { fill: none; stroke: var(--line); stroke-width: 1.5; stroke-dasharray: 2 6; }
+  .screen-glow rect { fill: var(--accent-soft); }
+  .flows path {
+    fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round;
+    stroke-dasharray: 3 7;
+  }
+  .arc { fill: none; stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 1 4; }
+  .audience circle { fill: var(--ink-2); }
+  .fan-body { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+  .fan-blade { stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; }
+  .arrowhead { fill: var(--accent); }
+  .label {
+    font-family: var(--font); font-stretch: 78%; font-size: 13px; font-weight: 500;
+    fill: var(--ink-2);
+  }
+  .label.small { font-size: 11.5px; }
+  .arc-label { paint-order: stroke; stroke: var(--paper); stroke-width: 5px; fill: var(--ink); font-weight: 600; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animate .flows path {
+      animation: flow 2.6s cubic-bezier(.2,.7,.3,1) var(--delay) both;
+    }
+    .animate .fan-blade { transform-origin: 0 0; animation: spin 2.6s cubic-bezier(.2,.7,.3,1) 1 both; }
+  }
+  @keyframes flow {
+    from { stroke-dashoffset: 70; opacity: 0; }
+    20% { opacity: 1; }
+    to { stroke-dashoffset: 0; opacity: 1; }
+  }
+  @keyframes spin {
+    from { transform: rotate(-540deg); }
+    to { transform: rotate(0deg); }
+  }
+</style>

@@ -1,0 +1,23 @@
+{
+  "title": "MIR Player IV",
+  "summary": "Electron-Medienplayer für den mehrsinnlichen Interaktionsraum: Video, Bild und Audio auf drei Leinwänden, steuerbar über HTTP, OSC und Tastatur.",
+  "body": "",
+  "year": "2026",
+  "category": "raeume",
+  "context": "HTW Dresden",
+  "role": "Inbetriebnahme, Fehlerbehebung, Integration der Windsteuerung",
+  "team": "",
+  "tools": [
+    "Electron",
+    "Node.js",
+    "OSC",
+    "HTTP"
+  ],
+  "cover": "",
+  "coverPosition": "center",
+  "media": [],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

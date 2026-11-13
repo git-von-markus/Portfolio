@@ -1,0 +1,73 @@
+{
+  "title": "Urbane Natur",
+  "summary": "Fotoserie über Momente, in denen sich Stadt und Natur begegnen.",
+  "body": "In dieser Bilderserie wurde im Alltag und auf Wegen durch die Stadt bewusst nach Momenten gesucht, in denen sich urbane Strukturen und Natur begegnen. Die Fotografien setzen diese Kontraste und Übergänge in Szene und zeigen, wie präsent natürliche Elemente auch im städtischen Umfeld sind.",
+  "year": "2024/2025",
+  "category": "foto",
+  "context": "Freies Projekt",
+  "role": "Fotografie",
+  "team": "",
+  "tools": [],
+  "cover": "media/urbane-natur/urbane-natur-8.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-8.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-2.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-3.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-6.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-1.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-4.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-5.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-7.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    },
+    {
+      "type": "image",
+      "src": "media/urbane-natur/urbane-natur-9.webp",
+      "alt": "Foto aus der Serie Urbane Natur",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": false
+}

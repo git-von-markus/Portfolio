@@ -1,0 +1,25 @@
+{
+  "title": "Hand vs Hardware",
+  "summary": "",
+  "body": "",
+  "year": "2024/2025",
+  "category": "spiele",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/hand-vs-hardware/hand-vs-hardware.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/hand-vs-hardware/hand-vs-hardware.webp",
+      "alt": "Hand vs Hardware",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

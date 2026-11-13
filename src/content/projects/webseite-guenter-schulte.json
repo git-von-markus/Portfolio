@@ -1,0 +1,25 @@
+{
+  "title": "Webseitenentwurf Günter Schulte",
+  "summary": "",
+  "body": "",
+  "year": "2024",
+  "category": "webdesign",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/webseite-guenter-schulte/entwurf.webp",
+  "coverPosition": "top",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/webseite-guenter-schulte/entwurf.webp",
+      "alt": "Webseitenentwurf für Günter Schulte",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

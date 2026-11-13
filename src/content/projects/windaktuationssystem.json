@@ -1,0 +1,32 @@
+{
+  "title": "Windaktuationssystem für multisensorische Medienumgebungen",
+  "summary": "Bachelorarbeit: Software, die mehrere Lüfter zeitgenau zum Video steuert – mit eigenem Szenen-Editor, Hardwareabstraktion und einem Testaufbau mit Miniaturlüftern.",
+  "body": "Mehrsinnliche Medienräume ergänzen Bild und Ton um weitere Sinneseindrücke. Gezielter Wind kann das Gefühl, mittendrin zu sein, deutlich verstärken – im mehrsinnlichen Interaktionsraum (MIR) der HTW Dresden fehlte dafür bisher eine Steuerung.\n\nIn meiner Bachelorarbeit an der Professur Technische Visualistik habe ich dafür ein softwaregesteuertes Windaktuationssystem entworfen und prototypisch umgesetzt.\n\n## Was das System kann\n\n- **Szenen-Editor:** Für jeden Lüfter werden Intensität, Schwenk und Neigung als Kurven auf einer Zeitleiste gezeichnet.\n- **Synchron zum Video:** Die Ablaufsteuerung wertet die Kurven 50-mal pro Sekunde aus und folgt Wiedergabe, Pause, Stopp und Sprung des Medienplayers.\n- **Unabhängig von der Hardware:** Eine Geräteschicht trennt die Steuerung von den Lüftern. Ein Geräteprofil beschreibt Position, Grenzen und Ansteuerung jedes Lüfters; ein Dummy-Treiber erlaubt Tests ganz ohne Hardware.\n\n## Testaufbau\n\nErprobt wurde das System an einem verkleinerten Modell des Raums: ein Rechner mit drei Bildschirmen als Leinwand und drei Miniaturlüftern (M5Stack mit eigener Firmware), angesteuert über HTTP. Automatisierte Tests prüfen Ablaufsteuerung, Dateiformate, Editor und Treiber.\n\n## Wie es weitergeht\n\nIm Forschungsseminar entwickle ich das Windformat weiter: Szenen sollen unabhängig von der Lüfteranordnung beschrieben und erst beim Abspielen auf den jeweiligen Raum abgebildet werden.",
+  "year": "2026",
+  "category": "raeume",
+  "context": "Bachelorarbeit, HTW Dresden",
+  "role": "Konzeption, Entwicklung, Testaufbau",
+  "team": "Einzelarbeit",
+  "tools": [
+    "Electron",
+    "JavaScript",
+    "Node.js",
+    "Canvas 2D",
+    "HTTP",
+    "Arduino (M5Stack)"
+  ],
+  "cover": "media/windaktuationssystem/szenen-editor-schema.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/windaktuationssystem/szenen-editor-schema.webp",
+      "alt": "Schema des Szenen-Editors: Kurven für Intensität, Schwenk und Neigung eines Lüfters über 30 Sekunden, darüber die drei Videoausgaben",
+      "caption": "Schema: Für jeden Lüfter liegen Intensität, Schwenk und Neigung als Kurven auf derselben Zeitleiste wie das Video."
+    }
+  ],
+  "links": [],
+  "highlight": true,
+  "order": 1,
+  "draft": false
+}

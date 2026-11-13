@@ -1,0 +1,25 @@
+{
+  "title": "Werbefoto Handball",
+  "summary": "Werbebild als Ergänzung zum Video für Ivo Petkov, optimiert für Social Media.",
+  "body": "Im Zuge der Videoerstellung für Ivo Petkov wurde ergänzend ein Werbebild erstellt. Dieses wurde für verschiedene Einsatzzwecke konzipiert und insbesondere für die Nutzung auf Social-Media-Plattformen wie Instagram optimiert.\n\nZiel war es, eine visuell konsistente Ergänzung zum Video zu schaffen, die sich flexibel für digitale Werbung und Online-Präsenzen einsetzen lässt.",
+  "year": "2024",
+  "category": "foto",
+  "context": "Freies Projekt",
+  "role": "Bildbearbeitung",
+  "team": "",
+  "tools": [],
+  "cover": "media/werbefoto-handball/werbefoto.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/werbefoto-handball/werbefoto.webp",
+      "alt": "Werbefoto für Ivo Petkov",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": false
+}

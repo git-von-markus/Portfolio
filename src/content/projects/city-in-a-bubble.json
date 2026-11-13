@@ -1,0 +1,25 @@
+{
+  "title": "City in a Bubble",
+  "summary": "Bildmontage aus dem Beleg Digitale Bildbearbeitung – erste Experimente mit Ebenen, Effekten und neuen Programmen.",
+  "body": "In diesem Beleg sollte mithilfe verschiedener Bildbearbeitungsprogramme ein neues Bild geschaffen werden. Ziel war es, unterschiedliche Techniken erstmals auszuprobieren, neue Programme zu testen und deren Funktionen kennenzulernen.\n\nDer Fokus lag dabei weniger auf dem finalen Motiv als auf dem experimentellen Umgang mit Werkzeugen, Ebenen, Effekten und Bearbeitungsprozessen.",
+  "year": "2023/2024",
+  "category": "foto",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/city-in-a-bubble/city-in-a-bubble.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/city-in-a-bubble/city-in-a-bubble.webp",
+      "alt": "Bildmontage City in a Bubble",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": false
+}

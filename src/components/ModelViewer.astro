@@ -1,0 +1,32 @@
+---
+interface Props { src: string; poster?: string; alt: string }
+const { src, poster, alt } = Astro.props;
+---
+<div class="mv-box">
+<model-viewer
+  src={src}
+  poster={poster}
+  alt={alt}
+  camera-controls
+  touch-action="pan-y"
+  shadow-intensity="0.8"
+  exposure="1"
+  loading="lazy"
+  reveal="auto"
+></model-viewer>
+</div>
+<p class="mv-hint muted">Zum Drehen ziehen, zum Zoomen scrollen oder zwei Finger nutzen.</p>
+
+<script>
+  import '@google/model-viewer';
+</script>
+
+<style>
+  .mv-box { width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  model-viewer {
+    width: 100%; height: 100%; display: block;
+    --poster-color: var(--surface);
+    --progress-bar-color: var(--accent);
+  }
+  .mv-hint { font-size: var(--step--1); font-stretch: 90%; margin: 8px 0 0; }
+</style>

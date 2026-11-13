@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Seite nicht gefunden">
+  <section class="wrap nf">
+    <h1>Diese Seite gibt es nicht.</h1>
+    <p class="muted">Vielleicht wurde das Projekt umbenannt. Alle Arbeiten finden Sie in der Projektliste.</p>
+    <a class="btn" href="/#projekte">Zur Projektliste</a>
+  </section>
+</Base>
+<style>
+  .nf { padding-block: clamp(48px, 10vw, 120px); }
+  .nf h1 { font-size: var(--step-3); margin-bottom: 16px; }
+</style>

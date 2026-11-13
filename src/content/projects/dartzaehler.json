@@ -1,0 +1,25 @@
+{
+  "title": "Dartzähler",
+  "summary": "",
+  "body": "",
+  "year": "2022",
+  "category": "software",
+  "context": "Schule",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/dartzaehler/dartzaehler.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/dartzaehler/dartzaehler.webp",
+      "alt": "Dartzähler",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

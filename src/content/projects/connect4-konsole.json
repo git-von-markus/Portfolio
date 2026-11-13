@@ -1,0 +1,25 @@
+{
+  "title": "Connect4 für die Konsole",
+  "summary": "",
+  "body": "",
+  "year": "2023/2024",
+  "category": "spiele",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/connect4-konsole/connect4-konsole.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/connect4-konsole/connect4-konsole.webp",
+      "alt": "Connect4 in der Konsole",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

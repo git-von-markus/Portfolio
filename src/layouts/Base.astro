@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { site } from '../lib/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: ImageMetadata;
+  editPath?: string;
+}
+
+const { title, description = site.seo.description, image, editPath = '' } = Astro.props;
+const fullTitle = title ? `${title} – ${site.name}` : `${site.name} – ${site.role}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const og = image ? await getImage({ src: image, width: 1200, format: 'jpg' }) : undefined;
+const ogUrl = og ? new URL(og.src, Astro.site).href : undefined;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogUrl && <meta property="og:image" content={ogUrl} />}
+    <meta name="twitter:card" content={ogUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="theme-color" content="#eef1f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121a24" media="(prefers-color-scheme: dark)" />
+  </head>
+  <body data-edit-path={editPath}>
+    <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+    <header class="site-head">
+      <div class="wrap">
+        <a class="wordmark" href="/">{site.name}</a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="/#projekte">Projekte</a>
+          <a href="/#ueber-mich">Über mich</a>
+          <a href="/#kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inhalt">
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap">
+        <span class="copyright" id="copyright">© {year} {site.name}</span>
+        <nav aria-label="Rechtliches">
+          <a href="/impressum/">Impressum</a>
+          <a href="/datenschutz/">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // Versteckter Zugang: Doppelklick auf das Copyright öffnet das Studio.
+      document.getElementById('copyright')?.addEventListener('dblclick', () => {
+        location.href = '/studio/';
+      });
+      // Angemeldet? Dann direkt einen Bearbeiten-Knopf zeigen.
+      try {
+        const key = 'portfolio-studio';
+        if (localStorage.getItem(key) || sessionStorage.getItem(key)) {
+          const a = document.createElement('a');
+          a.className = 'edit-fab';
+          a.href = '/studio/#/' + (document.body.dataset.editPath || '');
+          a.textContent = 'Bearbeiten';
+          document.body.append(a);
+        }
+      } catch {}
+    </script>
+  </body>
+</html>

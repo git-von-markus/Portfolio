@@ -1,0 +1,28 @@
+{
+  "title": "Schwert und Schild",
+  "summary": "In Blender modelliertes Set aus Schwert und Schild – im Browser frei drehbar.",
+  "body": "",
+  "year": "2025",
+  "category": "3d",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [
+    "Blender"
+  ],
+  "cover": "media/schwert-schild/vorschau.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "model",
+      "src": "files/schwert-schild/schwert-schild.glb",
+      "poster": "media/schwert-schild/vorschau.webp",
+      "alt": "3D-Modell von Schwert und Schild",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": false
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Ball with Tail",
+  "summary": "",
+  "body": "",
+  "year": "2025",
+  "category": "3d",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/ball-with-tail/vorschau.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "video",
+      "src": "files/ball-with-tail/ball-with-tail.mp4",
+      "poster": "media/ball-with-tail/vorschau.webp",
+      "alt": "",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

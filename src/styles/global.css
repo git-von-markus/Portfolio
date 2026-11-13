@@ -1,0 +1,139 @@
+@import '@fontsource-variable/archivo/standard.css';
+
+/* ---------- Tokens ---------- */
+:root {
+  --paper: #eef1f0;
+  --surface: #f8faf9;
+  --ink: #17212e;
+  --ink-2: #4e5b6b;
+  --line: #c9d1d6;
+  --accent: #0a7c8c;
+  --accent-ink: #075f6b;
+  --accent-soft: #d5ecee;
+
+  --font: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --wide: 122%;
+  --narrow: 86%;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3125rem;
+  --step-2: 1.625rem;
+  --step-3: 2.125rem;
+  --step-4: clamp(2.5rem, 1.6rem + 3.6vw, 4.25rem);
+
+  --gutter: clamp(16px, 4vw, 40px);
+  --max: 1180px;
+  --radius: 6px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #121a24;
+    --surface: #18222e;
+    --ink: #e6ecef;
+    --ink-2: #a3b0bc;
+    --line: #2c3946;
+    --accent: #3fc1cf;
+    --accent-ink: #6fd3de;
+    --accent-soft: #163a41;
+  }
+}
+:root[data-theme='dark'] {
+  --paper: #121a24;
+  --surface: #18222e;
+  --ink: #e6ecef;
+  --ink-2: #a3b0bc;
+  --line: #2c3946;
+  --accent: #3fc1cf;
+  --accent-ink: #6fd3de;
+  --accent-soft: #163a41;
+}
+
+/* ---------- Basis ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 24px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-stretch: 100%;
+  text-rendering: optimizeLegibility;
+  touch-action: manipulation;
+}
+
+img, video { max-width: 100%; display: block; }
+a { color: var(--accent-ink); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+h1, h2, h3 { font-stretch: var(--wide); line-height: 1.12; letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+h1 { font-size: var(--step-4); font-weight: 680; }
+h2 { font-size: var(--step-3); font-weight: 640; }
+h3 { font-size: var(--step-2); font-weight: 620; }
+p { margin: 0 0 1em; }
+
+.wrap { width: min(100% - 2 * var(--gutter), var(--max)); margin-inline: auto; }
+.narrow { font-stretch: var(--narrow); }
+.muted { color: var(--ink-2); }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--paper); padding: 8px 12px; z-index: 10; }
+.skip:focus { left: 8px; }
+
+/* ---------- Kopf ---------- */
+.site-head { padding-block: 22px; }
+.site-head .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.wordmark { font-stretch: var(--wide); font-weight: 680; font-size: 1.05rem; color: var(--ink); text-decoration: none; letter-spacing: -0.005em; }
+.site-nav { display: flex; gap: clamp(14px, 3vw, 28px); font-size: var(--step--1); }
+.site-nav a { color: var(--ink); text-decoration: none; }
+.site-nav a:hover { color: var(--accent-ink); text-decoration: underline; }
+
+/* ---------- Abschnitte ---------- */
+.section { padding-block: clamp(56px, 9vw, 112px); }
+.section + .section { border-top: 1px solid var(--line); }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 48px); }
+.section-head p { margin: 0; color: var(--ink-2); max-width: 46ch; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: var(--radius);
+  font: inherit; font-size: var(--step--1); font-weight: 560; line-height: 1.2;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
+}
+.btn:hover { background: var(--accent-ink); border-color: var(--accent-ink); text-decoration: none; }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.ghost:hover { background: var(--accent-soft); color: var(--ink); border-color: var(--ink); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- Fliesstext aus Markdown ---------- */
+.prose { max-width: 68ch; }
+.prose h2 { font-size: var(--step-1); margin: 1.8em 0 0.5em; }
+.prose h3 { font-size: var(--step-0); margin: 1.5em 0 0.4em; }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1em; }
+.prose li { margin-bottom: 0.35em; }
+.prose li::marker { color: var(--accent); }
+.prose strong { font-weight: 640; }
+.prose > :first-child { margin-top: 0; }
+
+/* ---------- Fuss ---------- */
+.site-foot { border-top: 1px solid var(--line); padding-block: 28px 40px; font-size: var(--step--1); color: var(--ink-2); }
+.site-foot .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.site-foot nav { display: flex; gap: 20px; }
+.site-foot a { color: var(--ink-2); }
+.copyright { user-select: none; }
+
+.edit-fab {
+  position: fixed; right: 16px; bottom: 16px; z-index: 50;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  padding: 10px 14px; border-radius: var(--radius); font-size: var(--step--1); font-weight: 560;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.18);
+}
+.edit-fab:hover { background: var(--accent-ink); }

@@ -1,0 +1,25 @@
+{
+  "title": "DishDash",
+  "summary": "",
+  "body": "",
+  "year": "2025",
+  "category": "software",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/dishdash/dishdash.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/dishdash/dishdash.webp",
+      "alt": "DishDash",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}
