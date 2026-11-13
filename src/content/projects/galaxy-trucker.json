@@ -1,0 +1,30 @@
+{
+  "title": "Galaxy Trucker im Interaktionsraum",
+  "summary": "Das Brettspiel Galaxy Trucker, erweitert um Licht, Klang und haptische Elemente in einem mehrsinnlichen Interaktionsraum.",
+  "body": "Im Rahmen des Moduls *Gestaltung haptischer Benutzerschnittstellen* entsteht eine ambient-unterstützende Umsetzung des Brettspiels Galaxy Trucker. Ziel des Projekts ist es, das Spielerlebnis durch eine erweiterte, technische Umgebung zu ergänzen und zu intensivieren.\n\nDie Umsetzung findet in einem mehrsinnlichen Interaktionsraum statt, in dem visuelle, akustische und haptische Elemente miteinander kombiniert werden. Dadurch wird das Spiel nicht nur digital erweitert, sondern auch räumlich und atmosphärisch erfahrbar gemacht.\n\nIm Zuge der Entwicklung setze ich mich mit verschiedenen Themen auseinander, darunter die Arbeit mit der Unreal Engine, Sounddesign, Mikrocontroller-Programmierung sowie der Einsatz von 3D-Druck zur Erstellung physischer Komponenten. Das Projekt verbindet damit spielerische Interaktion mit technischer Umsetzung und gestalterischem Anspruch.",
+  "year": "2025",
+  "category": "raeume",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [
+    "Unreal Engine",
+    "Mikrocontroller",
+    "Sounddesign",
+    "3D-Druck"
+  ],
+  "cover": "media/galaxy-trucker/galaxy-trucker.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/galaxy-trucker/galaxy-trucker.webp",
+      "alt": "Galaxy Trucker im Interaktionsraum",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": true,
+  "order": 2,
+  "draft": false
+}

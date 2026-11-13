@@ -1,0 +1,25 @@
+{
+  "title": "Connect4 als App",
+  "summary": "",
+  "body": "",
+  "year": "2024",
+  "category": "spiele",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/connect4-app/connect4-app.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/connect4-app/connect4-app.webp",
+      "alt": "Connect4 als App",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

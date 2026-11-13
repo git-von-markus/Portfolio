@@ -1,0 +1,104 @@
+{
+  "name": "Markus Niebisch",
+  "role": "Medieninformatiker aus Dresden",
+  "headline": "Ich verbinde Software, Hardware und Gestaltung zu interaktiven Medienerlebnissen – zuletzt mit einer Windsteuerung für einen 270°-Medienraum.",
+  "intro": "Bachelor Medieninformatik an der HTW Dresden, jetzt im Masterstudium. Dazu kommen Projekte aus Spieleentwicklung, 3D, Film und Fotografie.",
+  "heroCaption": "Geplanter Aufbau im mehrsinnlichen Interaktionsraum der HTW Dresden: 270°-Leinwand und sechs schwenkbare Lüfter, gesteuert synchron zum Bild.",
+  "about": "Am liebsten arbeite ich dort, wo Software auf Hardware und Raum trifft. In meiner Bachelorarbeit habe ich eine Windsteuerung für den mehrsinnlichen Interaktionsraum der HTW Dresden entwickelt; im Forschungsseminar führe ich das Thema weiter.\n\nIm Studium und daneben habe ich Spiele in Unity und Unreal gebaut, in Blender modelliert, Filme gedreht und geschnitten und fotografiert. Diese Mischung aus Technik und Gestaltung nehme ich in jedes Projekt mit.",
+  "portrait": "",
+  "cv": "",
+  "timeline": [
+    {
+      "period": "seit 2026",
+      "title": "Masterstudium",
+      "place": "HTW Dresden",
+      "text": ""
+    },
+    {
+      "period": "2026",
+      "title": "Bachelorarbeit: Windaktuationssystem für multisensorische Medienumgebungen",
+      "place": "Professur Technische Visualistik, HTW Dresden",
+      "text": ""
+    },
+    {
+      "period": "bis 2026",
+      "title": "Bachelor Medieninformatik",
+      "place": "HTW Dresden",
+      "text": ""
+    },
+    {
+      "period": "neben dem Studium",
+      "title": "Mitarbeit im Studierendenrat",
+      "place": "StuRa der HTW Dresden",
+      "text": "Mitglieder- und Zugangsverwaltung, Automatisierung von Abläufen"
+    }
+  ],
+  "skills": [
+    {
+      "group": "Software",
+      "items": ["JavaScript", "Node.js", "Electron", "HTML und CSS", "Arduino / C++", "Git"]
+    },
+    {
+      "group": "Interaktive Medien",
+      "items": ["Unity", "Unreal Engine", "Mikrocontroller", "3D-Druck"]
+    },
+    {
+      "group": "Gestaltung und Produktion",
+      "items": ["Blender", "Videoproduktion und Schnitt", "Fotografie", "Bildbearbeitung", "Sounddesign"]
+    },
+    {
+      "group": "Wissenschaftliches Arbeiten",
+      "items": ["LaTeX", "Zotero", "Literaturrecherche"]
+    }
+  ],
+  "contact": {
+    "text": "Ich freue mich über Nachrichten zu Stellen, Projekten oder Kooperationen.",
+    "email": "niebischmarkus@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/niebischmarkus/",
+    "github": "https://github.com/git-von-markus"
+  },
+  "categories": [
+    {
+      "id": "raeume",
+      "title": "Medienräume & Interaktion",
+      "description": "Steuerung, Software und Erlebnisse für mehrsinnliche Räume."
+    },
+    {
+      "id": "spiele",
+      "title": "Spiele",
+      "description": "Spiele und Spielprototypen aus Unity, Unreal und eigener Programmierung."
+    },
+    {
+      "id": "3d",
+      "title": "3D & Animation",
+      "description": "Modelle und Animationen aus Blender."
+    },
+    {
+      "id": "software",
+      "title": "Software & Web",
+      "description": "Anwendungen, Apps und Versuchsaufbauten."
+    },
+    {
+      "id": "webdesign",
+      "title": "Webdesign",
+      "description": "Entwürfe für Webseiten."
+    },
+    {
+      "id": "film",
+      "title": "Film & Video",
+      "description": "Konzeption, Dreh und Schnitt."
+    },
+    {
+      "id": "foto",
+      "title": "Foto & Bild",
+      "description": "Fotografie und Bildbearbeitung."
+    }
+  ],
+  "seo": {
+    "description": "Portfolio von Markus Niebisch, Medieninformatiker aus Dresden: mehrsinnliche Medienräume, interaktive Systeme, Spiele, 3D, Film und Fotografie."
+  },
+  "legal": {
+    "impressum": "## Angaben gemäß § 5 DDG\n\nMarkus Niebisch  \nAmalie-Dietrich-Platz 9  \n01169 Dresden  \nDeutschland\n\n## Kontakt\n\nE-Mail: [niebischmarkus@gmail.com](mailto:niebischmarkus@gmail.com)\n\n## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV\n\nMarkus Niebisch  \nAmalie-Dietrich-Platz 9  \n01169 Dresden",
+    "datenschutz": "## 1. Überblick\n\nDiese Website setzt keine Cookies, verwendet kein Tracking und lädt keine Inhalte von Drittanbietern, solange Sie das nicht selbst auslösen. Schriften und die 3D-Ansicht werden direkt von dieser Website geladen.\n\n## 2. Verantwortlicher\n\nVerantwortlich für die Datenverarbeitung auf dieser Website ist Markus Niebisch (Kontaktdaten siehe [Impressum](/impressum/)).\n\n## 3. Hosting\n\nDiese Website wird über **GitHub Pages** gehostet. Der Anbieter GitHub, Inc. verarbeitet beim Aufruf der Seiten automatisch technische Informationen wie Ihre IP-Adresse, um die Website auszuliefern und abzusichern. Weitere Informationen finden Sie in der [Datenschutzerklärung von GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement).\n\n## 4. YouTube-Videos\n\nEinige Projekte enthalten Videos von YouTube. Diese werden erst geladen, wenn Sie auf „Video laden“ klicken. Erst dann wird eine Verbindung zu YouTube (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) hergestellt, und dabei werden unter anderem Ihre IP-Adresse und die aufgerufene Seite übermittelt. Die Videos werden über youtube-nocookie.com eingebunden. Weitere Informationen finden Sie in der [Datenschutzerklärung von Google](https://policies.google.com/privacy?hl=de).\n\n## 5. Kontaktaufnahme per E-Mail\n\nWenn Sie mir eine E-Mail schreiben, speichere ich Ihre Angaben, um die Anfrage zu bearbeiten und für mögliche Anschlussfragen. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.\n\n## 6. Ihre Rechte\n\nSie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Außerdem haben Sie ein Recht auf Berichtigung, Einschränkung der Verarbeitung oder Löschung dieser Daten sowie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.\n\nHierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an mich wenden."
+  }
+}

@@ -1,0 +1,22 @@
+---
+import '../../styles/global.css';
+import '../../styles/studio.css';
+import App from '../../studio/App.jsx';
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Portfolio-Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="studio-body">
+    <App client:only="preact">
+      <p slot="fallback" class="center-screen">Studio wird geladen …</p>
+    </App>
+    <noscript>Das Studio braucht JavaScript.</noscript>
+  </body>
+</html>

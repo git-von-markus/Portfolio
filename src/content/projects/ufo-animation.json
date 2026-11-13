@@ -1,0 +1,26 @@
+{
+  "title": "UFO-Animation",
+  "summary": "",
+  "body": "",
+  "year": "2025",
+  "category": "3d",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/ufo-animation/vorschau.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "video",
+      "src": "files/ufo-animation/ufo.mp4",
+      "poster": "media/ufo-animation/vorschau.webp",
+      "alt": "",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

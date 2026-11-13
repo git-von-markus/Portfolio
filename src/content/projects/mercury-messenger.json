@@ -1,0 +1,25 @@
+{
+  "title": "Mercury Messenger",
+  "summary": "",
+  "body": "",
+  "year": "2024/2025",
+  "category": "software",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/mercury-messenger/mercury-messenger.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/mercury-messenger/mercury-messenger.webp",
+      "alt": "Mercury Messenger",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

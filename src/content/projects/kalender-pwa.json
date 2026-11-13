@@ -1,0 +1,25 @@
+{
+  "title": "Kalender-PWA",
+  "summary": "",
+  "body": "",
+  "year": "2025",
+  "category": "software",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/kalender-pwa/kalender-pwa.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/kalender-pwa/kalender-pwa.webp",
+      "alt": "Kalender-PWA",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

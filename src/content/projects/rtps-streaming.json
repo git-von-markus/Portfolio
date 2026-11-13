@@ -1,0 +1,25 @@
+{
+  "title": "RTPS-Streaming-Versuchsaufbau",
+  "summary": "",
+  "body": "",
+  "year": "2025",
+  "category": "software",
+  "context": "Studium",
+  "role": "",
+  "team": "",
+  "tools": [],
+  "cover": "media/rtps-streaming/rtps-streaming.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/rtps-streaming/rtps-streaming.webp",
+      "alt": "RTPS-Streaming-Versuchsaufbau",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": false,
+  "order": 100,
+  "draft": true
+}

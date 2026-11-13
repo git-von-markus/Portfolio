@@ -1,0 +1,27 @@
+{
+  "title": "Falling Leaves",
+  "summary": "Puzzlespiel in Unity: Gegenstände so platzieren, dass fallende Blätter einen Igel nach und nach zudecken.",
+  "body": "Das Spiel ist als kleines Puzzlespiel konzipiert, in dem über mehrere Level hinweg ein Igel nach und nach mit immer mehr Blättern bedeckt wird. Ziel ist es, durch geschicktes Platzieren verschiedener Gegenstände den Weg der fallenden Blätter zu beeinflussen.\n\nDie Spielerinnen und Spieler lösen die einzelnen Level, indem sie die Bewegung der Blätter gezielt lenken und so die gewünschte Reaktion im Spiel auslösen. Die komplette Umsetzung erfolgt innerhalb der Unity Engine und umfasst sowohl das Gameplay-Design als auch die technische Realisierung.",
+  "year": "2025",
+  "category": "spiele",
+  "context": "Studium",
+  "role": "Gameplay-Design, Programmierung",
+  "team": "",
+  "tools": [
+    "Unity"
+  ],
+  "cover": "media/falling-leaves/falling-leaves.webp",
+  "coverPosition": "center",
+  "media": [
+    {
+      "type": "image",
+      "src": "media/falling-leaves/falling-leaves.webp",
+      "alt": "Spielszene aus Falling Leaves",
+      "caption": ""
+    }
+  ],
+  "links": [],
+  "highlight": true,
+  "order": 4,
+  "draft": false
+}

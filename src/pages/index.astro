@@ -1,0 +1,286 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import RoomPlan from '../components/RoomPlan.astro';
+import Cover from '../components/Cover.astro';
+import {
+  site, getProjects, getHighlights, categoryTitle, projectUrl, md, resolveImage, fileUrl, coverImage,
+} from '../lib/content';
+
+const projects = await getProjects();
+const highlights = await getHighlights();
+const usedCats = site.categories
+  .map((c) => ({ ...c, count: projects.filter((p) => p.data.category === c.id).length }))
+  .filter((c) => c.count > 0);
+const portrait = resolveImage(site.portrait);
+const ogImage = highlights[0] ? coverImage(highlights[0]) : undefined;
+const mailHref = `mailto:${site.contact.email}`;
+---
+<Base image={ogImage}>
+  <!-- Einstieg -->
+  <section class="hero wrap" aria-labelledby="hero-name">
+    <div class="hero-text">
+      <p class="hero-role narrow">{site.role}</p>
+      <h1 id="hero-name">{site.name}</h1>
+      <p class="hero-headline">{site.headline}</p>
+      <p class="hero-intro muted">{site.intro}</p>
+      <div class="btn-row">
+        <a class="btn" href="#projekte">Projekte ansehen</a>
+        <a class="btn ghost" href="#kontakt">Kontakt aufnehmen</a>
+        {site.cv && <a class="btn ghost" href={fileUrl(site.cv)} download>Lebenslauf (PDF)</a>}
+      </div>
+    </div>
+    <figure class="hero-plan">
+      <RoomPlan />
+      <figcaption class="muted">{site.heroCaption}</figcaption>
+    </figure>
+  </section>
+
+  <!-- Highlights -->
+  {highlights.length > 0 && (
+    <section class="section" id="auswahl" aria-labelledby="auswahl-titel">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="auswahl-titel">Ausgewählte Projekte</h2>
+        </div>
+        <ol class="highlights">
+          {highlights.map((p, i) => (
+            <li class:list={['hl', { flip: i % 2 === 1 }]}>
+              <a class="hl-media" href={projectUrl(p)} tabindex="-1" aria-hidden="true">
+                <Cover project={p} widths={[480, 760, 1100, 1400]} sizes="(min-width: 900px) 640px, 100vw" eager={i === 0} />
+              </a>
+              <div class="hl-text">
+                <p class="hl-cat narrow">{categoryTitle(p.data.category)}</p>
+                <h3><a href={projectUrl(p)}>{p.data.title}</a></h3>
+                <p class="hl-summary">{p.data.summary}</p>
+                <dl class="facts narrow">
+                  {p.data.year && <div><dt>Jahr</dt><dd>{p.data.year}</dd></div>}
+                  {p.data.context && <div><dt>Rahmen</dt><dd>{p.data.context}</dd></div>}
+                  {p.data.role && <div><dt>Meine Rolle</dt><dd>{p.data.role}</dd></div>}
+                  {p.data.tools.length > 0 && <div><dt>Werkzeuge</dt><dd>{p.data.tools.join(', ')}</dd></div>}
+                </dl>
+                <a class="more" href={projectUrl(p)}>Zum Projekt</a>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
+
+  <!-- Alle Projekte -->
+  <section class="section" id="projekte" aria-labelledby="projekte-titel">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projekte-titel">Alle Projekte</h2>
+        <p>Aus Studium, Forschung, Ehrenamt und freien Projekten.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Nach Bereich filtern">
+        <button type="button" class="chip" data-filter="" aria-pressed="true">Alle <span>{projects.length}</span></button>
+        {usedCats.map((c) => (
+          <button type="button" class="chip" data-filter={c.id} aria-pressed="false">{c.title} <span>{c.count}</span></button>
+        ))}
+      </div>
+
+      <ul class="index" id="index">
+        {projects.map((p) => (
+          <li data-cat={p.data.category}>
+            <a href={projectUrl(p)} class="row">
+              <span class="thumb"><Cover project={p} widths={[160, 320]} sizes="160px" /></span>
+              <span class="row-main">
+                <span class="row-title">{p.data.title}</span>
+                <span class="row-summary muted">{p.data.summary}</span>
+              </span>
+              <span class="row-cat narrow muted">{categoryTitle(p.data.category)}</span>
+              <span class="row-year narrow">{p.data.year}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Über mich -->
+  <section class="section" id="ueber-mich" aria-labelledby="ueber-titel">
+    <div class="wrap about">
+      <div class="about-text">
+        <h2 id="ueber-titel">Über mich</h2>
+        {portrait && (
+          <Image src={portrait} alt={`Porträt von ${site.name}`} widths={[240, 480]} sizes="240px" format="webp" class="portrait" />
+        )}
+        <div class="prose" set:html={md(site.about)} />
+      </div>
+
+      <div class="about-side">
+        <h3>Werdegang</h3>
+        <ol class="timeline">
+          {site.timeline.map((t) => (
+            <li>
+              <span class="tl-period narrow">{t.period}</span>
+              <span class="tl-title">{t.title}</span>
+              {t.place && <span class="tl-place muted">{t.place}</span>}
+              {t.text && <span class="tl-text muted">{t.text}</span>}
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="skills">
+        <h3>Kenntnisse</h3>
+        <div class="skill-groups">
+          {site.skills.map((g) => (
+            <div>
+              <h4 class="narrow">{g.group}</h4>
+              <ul>{g.items.map((s) => <li>{s}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section class="section contact" id="kontakt" aria-labelledby="kontakt-titel">
+    <div class="wrap">
+      <h2 id="kontakt-titel">Kontakt</h2>
+      <p class="muted contact-text">{site.contact.text}</p>
+      <a class="mail" href={mailHref}>{site.contact.email}</a>
+      <div class="btn-row">
+        {site.contact.linkedin && <a class="btn ghost" href={site.contact.linkedin} rel="noopener" target="_blank">LinkedIn</a>}
+        {site.contact.github && <a class="btn ghost" href={site.contact.github} rel="noopener" target="_blank">GitHub</a>}
+        {site.cv && <a class="btn ghost" href={fileUrl(site.cv)} download>Lebenslauf (PDF)</a>}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const chips = [...document.querySelectorAll<HTMLButtonElement>('.filters .chip')];
+  const rows = [...document.querySelectorAll<HTMLLIElement>('#index > li')];
+
+  function apply(cat: string) {
+    chips.forEach((c) => c.setAttribute('aria-pressed', String((c.dataset.filter ?? '') === cat)));
+    rows.forEach((r) => { r.hidden = !!cat && r.dataset.cat !== cat; });
+    const url = new URL(location.href);
+    if (cat) url.searchParams.set('bereich', cat); else url.searchParams.delete('bereich');
+    history.replaceState(null, '', url);
+  }
+  chips.forEach((c) => c.addEventListener('click', () => apply(c.dataset.filter ?? '')));
+  const initial = new URL(location.href).searchParams.get('bereich');
+  if (initial && chips.some((c) => c.dataset.filter === initial)) apply(initial);
+</script>
+
+<style>
+  /* Einstieg */
+  .hero {
+    display: grid; gap: clamp(28px, 5vw, 64px); align-items: center;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    padding-block: clamp(24px, 6vw, 72px) clamp(56px, 9vw, 104px);
+  }
+  .hero-role { margin: 0 0 14px; color: var(--accent-ink); font-weight: 560; }
+  .hero h1 { font-stretch: 125%; font-weight: 720; letter-spacing: -0.02em; line-height: 0.98; margin-bottom: 26px; }
+  .hero-headline { font-size: var(--step-1); line-height: 1.42; max-width: 32ch; margin-bottom: 14px; }
+  .hero-intro { max-width: 52ch; margin-bottom: 28px; }
+  .hero-plan { margin: 0; }
+  .hero-plan figcaption { font-size: var(--step--1); font-stretch: 90%; margin-top: 10px; max-width: 52ch; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-plan { max-width: 520px; }
+  }
+
+  /* Highlights */
+  .highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(48px, 7vw, 96px); }
+  .hl { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); align-items: center; }
+  .hl-media { grid-column: 1 / span 7; aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--radius); display: block; background: var(--surface); }
+  .hl-text { grid-column: 8 / span 5; }
+  .hl.flip .hl-media { grid-column: 6 / span 7; order: 2; }
+  .hl.flip .hl-text { grid-column: 1 / span 5; }
+  .hl-cat { margin: 0 0 10px; color: var(--accent-ink); font-weight: 560; font-size: var(--step--1); }
+  .hl h3 { margin-bottom: 14px; }
+  .hl h3 a { color: inherit; text-decoration: none; }
+  .hl h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+  .hl-summary { color: var(--ink-2); }
+  .more { font-weight: 560; }
+
+  .facts { margin: 18px 0 20px; display: grid; gap: 6px; font-size: 0.95rem; }
+  .facts div { display: grid; grid-template-columns: 9.5em 1fr; gap: 12px; border-top: 1px solid var(--line); padding-top: 6px; }
+  .facts dt { color: var(--ink-2); }
+  .facts dd { margin: 0; }
+
+  @media (max-width: 860px) {
+    .hl, .hl.flip { grid-template-columns: 1fr; }
+    .hl-media, .hl-text, .hl.flip .hl-media, .hl.flip .hl-text { grid-column: auto; order: 0; }
+  }
+
+  /* Filter */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .chip {
+    font: inherit; font-size: var(--step--1); cursor: pointer;
+    padding: 7px 14px; border-radius: 999px;
+    border: 1px solid var(--line); background: transparent; color: var(--ink);
+  }
+  .chip span { color: var(--ink-2); margin-left: 4px; font-stretch: 78%; }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed='true'] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip[aria-pressed='true'] span { color: inherit; opacity: 0.75; }
+
+  /* Projektliste */
+  .index { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .index li { border-bottom: 1px solid var(--line); }
+  .row {
+    display: grid; grid-template-columns: 112px minmax(0, 1fr) 13em 6em; gap: 20px; align-items: center;
+    padding: 14px 8px; color: inherit; text-decoration: none; border-radius: var(--radius);
+  }
+  .row:hover { background: var(--surface); }
+  .row:hover .row-title { color: var(--accent-ink); }
+  .thumb { width: 112px; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 4px; display: block; background: var(--surface); }
+  .thumb :global(.cf-title), .thumb :global(.cf-cat) { display: none; }
+  .thumb :global(.cf-play) { width: 22px; height: 22px; top: 50%; right: 50%; transform: translate(50%, -50%); }
+  .row-main { display: grid; gap: 2px; min-width: 0; }
+  .row-title { font-weight: 600; font-stretch: 110%; }
+  .row-summary { font-size: var(--step--1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-year { text-align: right; font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 760px) {
+    .row { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; padding: 12px 0; }
+    .thumb { width: 84px; }
+    .row-cat { display: none; }
+    .row-year { grid-column: 2; text-align: left; margin-top: -10px; font-size: var(--step--1); color: var(--ink-2); }
+    .row-summary { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  }
+
+  /* Über mich */
+  .about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); }
+  .about h2 { margin-bottom: 24px; }
+  .about h3 { font-size: var(--step-1); margin-bottom: 18px; }
+  .portrait { width: 160px; border-radius: var(--radius); margin-bottom: 20px; }
+  .timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+  .timeline li { position: relative; padding: 0 0 22px 22px; display: grid; gap: 2px; }
+  .timeline li::before {
+    content: ''; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--accent);
+  }
+  .tl-period { color: var(--accent-ink); font-weight: 560; font-size: var(--step--1); }
+  .tl-title { font-weight: 600; line-height: 1.35; }
+  .tl-place, .tl-text { font-size: var(--step--1); }
+
+  .skills { grid-column: 1 / -1; }
+  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px 32px; }
+  .skill-groups h4 { margin: 0 0 8px; font-weight: 600; font-size: var(--step-0); border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .skill-groups ul { list-style: none; margin: 0; padding: 0; color: var(--ink-2); display: grid; gap: 2px; }
+
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+  /* Kontakt */
+  .contact h2 { margin-bottom: 14px; }
+  .contact-text { max-width: 50ch; }
+  .mail {
+    display: inline-block; margin: 8px 0 28px;
+    font-size: clamp(1.4rem, 0.9rem + 2.6vw, 2.75rem); font-stretch: 118%; font-weight: 620;
+    color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px;
+    text-underline-offset: 0.16em; overflow-wrap: anywhere;
+  }
+  .mail:hover { color: var(--accent-ink); }
+</style>
